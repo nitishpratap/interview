@@ -256,6 +256,94 @@ Certainly! Here are some interview questions related to properties in Swift:
 
 These questions cover a range of topics related to properties in Swift, including their types, behaviors, modifiers, and usage. They can help assess your understanding of properties and how they are applied in different scenarios.
 
+# different access modifiers in Swift:
+
+Access modifiers in Swift are used to control the visibility and accessibility of classes, structures, properties, methods, and other code entities. Swift provides five access levels to choose from, ranging from the most restrictive to the least restrictive: `private`, `fileprivate`, `internal`, `public`, and `open`.
+
+1. **Private**
+   - The `private` access level restricts the visibility of an entity to the enclosing scope.
+   - Entities marked as `private` are only accessible within the same file where they are defined.
+   - This access level provides the highest level of encapsulation and privacy.
+   - Example:
+     ```swift
+     private class PrivateClass {
+         private var privateProperty: Int = 0
+         
+         private func privateMethod() {}
+     }
+     ```
+
+2. **File-private**
+   - The `fileprivate` access level restricts the visibility of an entity to the same Swift source file in which it is defined.
+   - Entities marked as `fileprivate` can be accessed from any code within the same file but not from outside.
+   - This access level is useful for sharing implementation details within a single file.
+   - Example:
+     ```swift
+     fileprivate class FilePrivateClass {
+         fileprivate var fileprivateProperty: Int = 0
+         
+         fileprivate func fileprivateMethod() {}
+     }
+     ```
+
+3. **Internal**
+   - The `internal` access level is the default access level in Swift if none is specified.
+   - Entities with `internal` access can be accessed from any source file within the same module (an app or a framework).
+   - If you don't explicitly specify an access level, the entity will have internal access.
+   - Example:
+     ```swift
+     internal class InternalClass {
+         internal var internalProperty: Int = 0
+         
+         internal func internalMethod() {}
+     }
+     ```
+
+4. **Public**
+   - The `public` access level allows entities to be accessed from any source file within the same module or from a different module that imports the module where the entity is defined.
+   - However, entities marked as `public` cannot be subclassed or overridden outside the module where they are defined.
+   - Example:
+     ```swift
+     public class PublicClass {
+         public var publicProperty: Int = 0
+         
+         public func publicMethod() {}
+     }
+     ```
+
+5. **Open**
+   - The `open` access level is the least restrictive access level.
+   - Entities marked as `open` can be accessed from any source file within the same module or from a different module that imports the module where the entity is defined.
+   - Additionally, entities marked as `open` can be subclassed or overridden outside the module where they are defined.
+   - Example:
+     ```swift
+     open class OpenClass {
+         open var openProperty: Int = 0
+         
+         open func openMethod() {}
+     }
+     ```
+
+**Q: What is the difference between `private` and `fileprivate` access levels?**
+
+A: The `private` access level restricts the visibility of an entity to the enclosing scope, while `fileprivate` restricts the visibility to the same file where the entity is defined. In other words:
+- `private` entities can only be accessed within the same file and are invisible outside.
+- `fileprivate` entities can be accessed from any code within the same file but not from outside.
+
+**Q: When should I use `internal` access level?**
+
+A: The `internal` access level is useful when you want to make your entities accessible within the same module (app or framework) but
+ChatGPT
+ not outside. It is the default access level in Swift if none is specified. It allows you to hide implementation details and only expose the necessary interfaces to the rest of the module.
+
+**Q: What is the difference between `public` and `open` access levels?**
+
+A: Both `public` and `open` access levels allow entities to be accessed from any source file within the same module or from a different module that imports the module where the entity is defined. However, there is one key difference:
+- `public` entities cannot be subclassed or overridden outside the module where they are defined.
+- `open` entities can be subclassed or overridden outside the module where they are defined, providing the highest level of accessibility.
+
+It's important to choose the appropriate access level based on your specific needs and the desired level of encapsulation, privacy, and extensibility.
+
 # Methods in swift
 ChatGPT
 Sure! Here's a complete documentation on methods in Swift:
