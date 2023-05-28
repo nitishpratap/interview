@@ -41,7 +41,7 @@ You can perform additional actions inside the getter or setter to implement cust
 Note that in the example above, we've used a computed property with a private backing variable to store the actual value. This approach allows you to encapsulate the underlying storage and provide controlled access to the property.
 
 Sure! Here's a complete documentation on properties in Swift:
-### Properties
+# Properties
 Properties in Swift are used to store values and provide access to them within a class, structure, or enumeration. They can be classified into two types: stored properties and computed properties.
 
 Stored Properties:
