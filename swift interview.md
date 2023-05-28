@@ -1,3 +1,44 @@
+# Get/Set Properties in Swift
+what is getter and setter in swift
+
+In Swift, getter and setter are used to control access to the properties of a class, structure, or enumeration. They are known as computed properties and allow you to define custom actions when a property is accessed (getter) or modified (setter). The getter is responsible for retrieving the current value of a property, while the setter is responsible for updating or assigning a new value to the property.
+
+Here's an example to illustrate the usage of getters and setters in Swift:
+
+```swift
+class Person {
+    private var _name: String = ""
+
+    var name: String {
+        get {
+            return _name
+        }
+        set {
+            _name = newValue
+        }
+    }
+}
+```
+
+In the example above, we have a `Person` class with a private property `_name` and a public property `name`. The `name` property has a custom getter and setter. 
+
+The getter simply returns the current value of the `_name` property. It is automatically called whenever you access the `name` property, like this:
+
+```swift
+let person = Person()
+person.name // Calls the getter and returns the current value of _name
+```
+
+The setter, on the other hand, is called when you assign a new value to the `name` property, like this:
+
+```swift
+let person = Person()
+person.name = "John" // Calls the setter and assigns the new value to _name
+```
+
+You can perform additional actions inside the getter or setter to implement custom behavior. For example, you can add validation logic to the setter to ensure that the assigned value meets certain criteria before updating the property.
+
+Note that in the example above, we've used a computed property with a private backing variable to store the actual value. This approach allows you to encapsulate the underlying storage and provide controlled access to the property.
 
 Sure! Here's a complete documentation on properties in Swift:
 ### Properties
