@@ -1985,12 +1985,12 @@ A DispatchQueue defaults to a serial queue and can be initialized as follows:
 ```
 let serialQueue = DispatchQueue(label: "swiftlee.serial.queue")
 
-serialQueue.async {
+serialQueue.sync {
     print("Task 1 started")
     // Do some work..
     print("Task 1 finished")
 }
-serialQueue.async {
+serialQueue.sync {
     print("Task 2 started")
     // Do some work..
     print("Task 2 finished")
