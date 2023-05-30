@@ -2044,8 +2044,8 @@ A10: In Swift, you can use techniques such as serial dispatch queues, concurrent
 
 These interview questions cover the fundamental concepts and features of queues. They can help assess a candidate's understanding of queues, their types, implementation, and their role in managing data and concurrency.
 
-# core data
-
+# core data 
+https://medium.com/@ankurvekariya/core-data-crud-with-swift-4-2-for-beginners-40efe4e7d1cc
 Core Data is a powerful framework provided by Apple for managing the persistence of data in iOS, macOS, watchOS, and tvOS applications. It allows developers to model, store, and retrieve data using a high-level object-oriented interface. This documentation provides a comprehensive overview of Core Data and its key concepts.
 
 Introduction to Core Data:
