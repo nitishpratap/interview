@@ -1973,10 +1973,7 @@ Dispatch queues are a fundamental concept in Swift's Grand Central Dispatch (GCD
 # Concurrent vs Serial DispatchQueue: Concurrency in Swift explained
 Concurrent and Serial queues help us to manage how we execute tasks and help to make our applications run faster, more efficiently, and with improved responsiveness. We can create queues easily using the DispatchQueue class which is built on top of the Grand Central Dispatch (GCD) queue.
 
-The benefit of dispatch queues is that they’re a lot simpler to understand and more efficient at executing tasks on different threads compared to the lower level GCD threading code. Still, there’s a lot to learn, so let’s dive into the differences between concurrent and serial queues.
-
-A Design Tool Built for Developers
-Judo is the developer’s design tool with a user experience that is immediately familiar to anyone with SwiftUI experience. Before jumping into Xcode, take advantage of what a visual canvas has to offer—rapid iteration and creativity. Experiment with layout, sizing and color while Judo writes clean, production-ready SwiftUI code for you—then copy, paste and ship it.
+The benefit of dispatch queues is that they’re a lot simpler to understand and more efficient at executing tasks on different threads compared to the lower level GCD threading code.
 ## What is a dispatch queue?
 A DispatchQueue is an abstraction layer on top of the GCD queue that allows you to perform tasks asynchronously and concurrently in your application. Tasks are always executed in the order they’re added to the queue.
 
