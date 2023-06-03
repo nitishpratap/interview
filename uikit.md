@@ -1004,17 +1004,17 @@ Compatibility with Size Classes:
 Size classes are an abstraction in iOS that allow you to design adaptive layouts for different device sizes and orientations. Auto Layout works in conjunction with size classes to enable dynamic layout adjustments based on the current size class.
 
 Auto Layout is a powerful and flexible layout system in iOS that provides adaptive and responsive user interfaces. By defining layout constraints, you can create complex and dynamic layouts that adapt to different screen sizes and orientations.
-User
-complete documenatation on delegates in swift with examples 
-ChatGPT
-Delegates in Swift - Complete Documentation
+
+
+# Delegates in Swift - Complete Documentation
 
 Delegates are a design pattern commonly used in Swift and other object-oriented programming languages. They allow one object to communicate and pass data or events to another object. This documentation provides a comprehensive overview of delegates in Swift, along with examples of their implementation.
 
-Introduction to Delegates:
+
+:
 Delegates provide a way for objects to delegate tasks or responsibilities to another object. In Swift, delegates are typically implemented using protocols, where a protocol defines a set of methods and properties that the delegate should implement.
 
-Key Concepts:
+## Key Concepts:
 
 1. Protocol: A protocol in Swift is a blueprint of methods, properties, and other requirements that a class, structure, or enumeration can conform to. Protocols define the interface that delegates must adhere to.
 
@@ -1022,7 +1022,7 @@ Key Concepts:
 
 3. Delegating Object: The delegating object is the object that needs to communicate with its delegate. It holds a weak reference to the delegate and sends messages to it when specific events or actions occur.
 
-Implementing Delegates:
+## Implementing Delegates:
 
 To implement delegates in Swift, you need to follow these steps:
 
@@ -1096,9 +1096,9 @@ class ViewController: UIViewController, DataManagerDelegate {
 
 In this example, a DataManager class fetches data and notifies its delegate when the data is received. The ViewController class conforms to the DataManagerDelegate protocol and acts as the delegate. It receives the data through the `didReceiveData(data:)` method and handles it accordingly.
 
-Delegates are a powerful mechanism for communication between objects in Swift. They promote loose coupling and separation of concerns, allowing for modular and reusable code. By defining and implementing delegates, you can establish flexible and customizable interactions between different components of your application.
+### Delegates are a powerful mechanism for communication between objects in Swift. They promote loose coupling and separation of concerns, allowing for modular and reusable code. By defining and implementing delegates, you can establish flexible and customizable interactions between different components of your application.
 User
-interview questions on delegates.
+## interview questions on delegates.
 ChatGPT
 Certainly! Here are some common interview questions related to delegates:
 
@@ -1135,14 +1135,12 @@ Question 8: What are some alternatives to delegates in iOS development?
 Answer: Apart from delegates, alternatives to achieving communication between objects in iOS development include using closures, notifications (NotificationCenter), and Key-Value Observing (KVO). Each alternative has its own use cases and considerations, and the choice depends on the specific requirements of the project.
 
 These interview questions cover the fundamental concepts and usage of delegates in Swift. Understanding delegates is essential for developing modular, customizable, and maintainable iOS applications.
-User
-complete documentation on AVFoundation 
-ChatGPT
-AVFoundation - Complete Documentation
+
+# AVFoundation - Complete Documentation
 
 AVFoundation is a powerful framework provided by Apple in iOS and macOS that allows developers to work with audiovisual media in their applications. It provides a wide range of APIs for capturing, playing, editing, and exporting various types of media content. This documentation provides a comprehensive overview of AVFoundation, its key components, and examples of their usage.
 
-Key Components of AVFoundation:
+## Key Components of AVFoundation:
 
 1. AVAsset: AVAsset represents a media resource, such as a video or audio file. It provides access to the underlying media data, including its duration, tracks, and metadata. You can use AVAsset to load and manage media assets for playback or manipulation.
 
@@ -1231,13 +1229,13 @@ ampleBuffer, from connection: AVCaptureConnection) {
 }
 ```
 
-AVFoundation provides extensive functionality for working with audiovisual media in iOS and macOS applications. The framework offers a rich set of APIs for playback, capture, editing, and export of media assets. By leveraging AVFoundation, developers can create engaging multimedia experiences in their apps.
+### AVFoundation provides extensive functionality for working with audiovisual media in iOS and macOS applications. The framework offers a rich set of APIs for playback, capture, editing, and export of media assets. By leveraging AVFoundation, developers can create engaging multimedia experiences in their apps.
 User
 interview questions on avfoundation
 ChatGPT
 Certainly! Here are some common interview questions related to AVFoundation:
 
-Question 1: What is AVFoundation in iOS?
+## Question 1: What is AVFoundation in iOS?
 
 Answer: AVFoundation is a framework provided by Apple in iOS for working with audiovisual media. It offers a wide range of APIs for capturing, playing, editing, and exporting various types of media content, including video, audio, and images.
 
