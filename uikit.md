@@ -1096,7 +1096,7 @@ class ViewController: UIViewController, DataManagerDelegate {
 
 In this example, a DataManager class fetches data and notifies its delegate when the data is received. The ViewController class conforms to the DataManagerDelegate protocol and acts as the delegate. It receives the data through the `didReceiveData(data:)` method and handles it accordingly.
 
-### Delegates are a powerful mechanism for communication between objects in Swift. They promote loose coupling and separation of concerns, allowing for modular and reusable code. By defining and implementing delegates, you can establish flexible and customizable interactions between different components of your application.
+ Delegates are a powerful mechanism for communication between objects in Swift. They promote loose coupling and separation of concerns, allowing for modular and reusable code. By defining and implementing delegates, you can establish flexible and customizable interactions between different components of your application.
 User
 ## interview questions on delegates.
 ChatGPT
@@ -1228,8 +1228,7 @@ ampleBuffer, from connection: AVCaptureConnection) {
     }
 }
 ```
-
-### AVFoundation provides extensive functionality for working with audiovisual media in iOS and macOS applications. The framework offers a rich set of APIs for playback, capture, editing, and export of media assets. By leveraging AVFoundation, developers can create engaging multimedia experiences in their apps.
+AVFoundation provides extensive functionality for working with audiovisual media in iOS and macOS applications. The framework offers a rich set of APIs for playback, capture, editing, and export of media assets. By leveraging AVFoundation, developers can create engaging multimedia experiences in their apps.
 User
 interview questions on avfoundation
 ChatGPT
