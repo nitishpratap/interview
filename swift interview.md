@@ -1,9 +1,47 @@
-Swift Interview
-User
-complete  documentation on Properties in swift
-ChatGPT
-Sure! Here's a complete documentation on properties in Swift:
+# Get/Set Properties in Swift
+what is getter and setter in swift
 
+In Swift, getter and setter are used to control access to the properties of a class, structure, or enumeration. They are known as computed properties and allow you to define custom actions when a property is accessed (getter) or modified (setter). The getter is responsible for retrieving the current value of a property, while the setter is responsible for updating or assigning a new value to the property.
+
+Here's an example to illustrate the usage of getters and setters in Swift:
+
+```swift
+class Person {
+    private var _name: String = ""
+
+    var name: String {
+        get {
+            return _name
+        }
+        set {
+            _name = newValue
+        }
+    }
+}
+```
+
+In the example above, we have a `Person` class with a private property `_name` and a public property `name`. The `name` property has a custom getter and setter. 
+
+The getter simply returns the current value of the `_name` property. It is automatically called whenever you access the `name` property, like this:
+
+```swift
+let person = Person()
+person.name // Calls the getter and returns the current value of _name
+```
+
+The setter, on the other hand, is called when you assign a new value to the `name` property, like this:
+
+```swift
+let person = Person()
+person.name = "John" // Calls the setter and assigns the new value to _name
+```
+
+You can perform additional actions inside the getter or setter to implement custom behavior. For example, you can add validation logic to the setter to ensure that the assigned value meets certain criteria before updating the property.
+
+Note that in the example above, we've used a computed property with a private backing variable to store the actual value. This approach allows you to encapsulate the underlying storage and provide controlled access to the property.
+
+Sure! Here's a complete documentation on properties in Swift:
+# Properties
 Properties in Swift are used to store values and provide access to them within a class, structure, or enumeration. They can be classified into two types: stored properties and computed properties.
 
 Stored Properties:
@@ -104,9 +142,7 @@ struct MathUtility {
         return 2 * pi * radius
     }
 }
-``
-ChatGPT
-`
+
 
 In the above example, `pi` is a type property of the `MathUtility` structure, and `calculateCircumference` is a type method that uses the `pi` property to calculate the circumference.
 
@@ -219,8 +255,96 @@ Certainly! Here are some interview questions related to properties in Swift:
 15. Can you define a property without an initial value? If yes, how?
 
 These questions cover a range of topics related to properties in Swift, including their types, behaviors, modifiers, and usage. They can help assess your understanding of properties and how they are applied in different scenarios.
-User
-complete documentation on the methods in swift
+
+# different access modifiers in Swift:
+
+Access modifiers in Swift are used to control the visibility and accessibility of classes, structures, properties, methods, and other code entities. Swift provides five access levels to choose from, ranging from the most restrictive to the least restrictive: `private`, `fileprivate`, `internal`, `public`, and `open`.
+
+1. **Private**
+   - The `private` access level restricts the visibility of an entity to the enclosing scope.
+   - Entities marked as `private` are only accessible within the same file where they are defined.
+   - This access level provides the highest level of encapsulation and privacy.
+   - Example:
+     ```swift
+     private class PrivateClass {
+         private var privateProperty: Int = 0
+         
+         private func privateMethod() {}
+     }
+     ```
+
+2. **File-private**
+   - The `fileprivate` access level restricts the visibility of an entity to the same Swift source file in which it is defined.
+   - Entities marked as `fileprivate` can be accessed from any code within the same file but not from outside.
+   - This access level is useful for sharing implementation details within a single file.
+   - Example:
+     ```swift
+     fileprivate class FilePrivateClass {
+         fileprivate var fileprivateProperty: Int = 0
+         
+         fileprivate func fileprivateMethod() {}
+     }
+     ```
+
+3. **Internal**
+   - The `internal` access level is the default access level in Swift if none is specified.
+   - Entities with `internal` access can be accessed from any source file within the same module (an app or a framework).
+   - If you don't explicitly specify an access level, the entity will have internal access.
+   - Example:
+     ```swift
+     internal class InternalClass {
+         internal var internalProperty: Int = 0
+         
+         internal func internalMethod() {}
+     }
+     ```
+
+4. **Public**
+   - The `public` access level allows entities to be accessed from any source file within the same module or from a different module that imports the module where the entity is defined.
+   - However, entities marked as `public` cannot be subclassed or overridden outside the module where they are defined.
+   - Example:
+     ```swift
+     public class PublicClass {
+         public var publicProperty: Int = 0
+         
+         public func publicMethod() {}
+     }
+     ```
+
+5. **Open**
+   - The `open` access level is the least restrictive access level.
+   - Entities marked as `open` can be accessed from any source file within the same module or from a different module that imports the module where the entity is defined.
+   - Additionally, entities marked as `open` can be subclassed or overridden outside the module where they are defined.
+   - Example:
+     ```swift
+     open class OpenClass {
+         open var openProperty: Int = 0
+         
+         open func openMethod() {}
+     }
+     ```
+
+**Q: What is the difference between `private` and `fileprivate` access levels?**
+
+A: The `private` access level restricts the visibility of an entity to the enclosing scope, while `fileprivate` restricts the visibility to the same file where the entity is defined. In other words:
+- `private` entities can only be accessed within the same file and are invisible outside.
+- `fileprivate` entities can be accessed from any code within the same file but not from outside.
+
+**Q: When should I use `internal` access level?**
+
+A: The `internal` access level is useful when you want to make your entities accessible within the same module (app or framework) but
+ChatGPT
+ not outside. It is the default access level in Swift if none is specified. It allows you to hide implementation details and only expose the necessary interfaces to the rest of the module.
+
+**Q: What is the difference between `public` and `open` access levels?**
+
+A: Both `public` and `open` access levels allow entities to be accessed from any source file within the same module or from a different module that imports the module where the entity is defined. However, there is one key difference:
+- `public` entities cannot be subclassed or overridden outside the module where they are defined.
+- `open` entities can be subclassed or overridden outside the module where they are defined, providing the highest level of accessibility.
+
+It's important to choose the appropriate access level based on your specific needs and the desired level of encapsulation, privacy, and extensibility.
+
+# Methods in swift
 ChatGPT
 Sure! Here's a complete documentation on methods in Swift:
 
@@ -384,8 +508,7 @@ Certainly! Here are some interview questions related to methods in Swift, along 
     - Static methods are called by invoking them directly on the type itself, without creating an instance. For example: `TypeName.methodName()`.
 
 These questions cover various aspects of methods in Swift and can help evaluate your knowledge of defining, using, and understanding methods in the language.
-User
-complete documentation on inheritance in swift
+# Inheritance in swift
 ChatGPT
 Certainly! Here's a complete documentation on inheritance in Swift:
 
@@ -574,9 +697,7 @@ Certainly! Here are some additional topics related to inheritance that may come 
     - Yes, a subclass inherits the initializers of its superclass. However, the subclass can also provide its own initializers, and it is responsible for ensuring that all properties are properly initialized by calling the superclass initializers.
 
 These topics cover various aspects of inheritance in Swift and can provide a deeper understanding of the concepts and principles involved.
-User
-complete documentation on initialization in swift
-ChatGPT
+# initialization in swift
 Initialization is a process in Swift that prepares an instance of a class, structure, or enumeration for use. It involves setting initial values for properties and performing any other setup required before the instance can be used. This documentation provides a comprehensive overview of initialization in Swift.
 
 Default Initializers:
@@ -793,9 +914,9 @@ Q10: What is the purpose of implicitly unwrapped optionals in initializers?
 A10: Implicitly unwrapped optionals (`Type!`) in initializers allow properties to be assigned during initialization without the need for unwrapping. However, accessing an implicitly unwrapped optional property before assigning a value will result in a runtime error.
 
 These questions cover various aspects of initialization in Swift and can help assess a candidate's understanding of the topic.
-User
-complete documentation on Deinitialization in swift
-ChatGPT
+
+# Deinitialization in swift
+
 Deinitialization in Swift is the process of freeing up resources and performing any necessary cleanup before an instance of a class is deallocated from memory. Deinitializers are defined using the `deinit` keyword and are automatically called when an object is no longer referenced.
 
 Deinitializer Syntax:
@@ -896,8 +1017,7 @@ Q10: Are deinitializers commonly used in Swift?
 A10: Deinitializers are not commonly used in Swift due to the automatic memory management provided by Automatic Reference Counting (ARC). Most memory management is handled by ARC, and deinitializers are primarily used in scenarios that require manual resource cleanup and finalization.
 
 These interview questions and answers cover the fundamentals of deinitialization in Swift and can help assess a candidate's understanding of the topic.
-User
-complete documentation Optional Chaining in swift
+# Optional Chaining in swift
 ChatGPT
 Optional chaining in Swift is a powerful feature that allows you to access properties, methods, and subscripts of an optional value without explicitly unwrapping the optional. If the optional value is `nil`, the optional chaining expression evaluates to `nil`, avoiding runtime errors.
 
@@ -1102,9 +1222,9 @@ Q10: When would you typically use optional chaining in Swift?
 A10: Optional chaining is commonly used when working with optional values, such as when accessing properties or calling methods on optional objects. It is particularly useful in scenarios where you want to handle `nil` values gracefully and avoid runtime crashes.
 
 These interview questions and answers cover the essential aspects of optional chaining in Swift. They can help assess a candidate's understanding of how optional chaining works and its benefits in handling optional values safely.
-User
-complete documenatation on Error Handling in swift
-ChatGPT
+
+# Error Handling in swift
+
 Error handling in Swift provides a way to handle and recover from errors, exceptions, or other exceptional conditions that can occur during program execution. Swift's error handling mechanism is designed to be expressive, lightweight, and type-safe. It allows you to define and throw errors, catch and handle them, or propagate them to higher levels of the call stack. This documentation will cover the concepts and syntax of error handling in Swift.
 
 Throwing and Propagating Errors:
@@ -1192,7 +1312,6 @@ func processFile() throws {
 ```
 
 In the
-ChatGPT
 above example, the `defer` block is defined after calling `readFile()`. It will be executed whether an error is thrown or not, allowing you to perform cleanup tasks such as releasing resources.
 
 Rethrowing Errors:
@@ -1212,9 +1331,9 @@ func processFiles(files: [String], fileHandler: (String) throws -> Void) rethrow
 In the above example, the `processFiles(_:fileHandler:)` function takes an array of filenames and a file handler closure that can throw an error. If the file handler throws an error, it is rethrown by `processFiles(_:fileHandler:)` to the caller.
 
 That covers the basics of error handling in Swift. Error handling allows you to handle and recover from errors in a structured and controlled manner, ensuring the stability and reliability of your code.
-User
-Complete documenatation on Concurrency in swift
-ChatGPT
+
+# Concurrency in swift
+
 Concurrency in Swift refers to the ability to execute multiple tasks concurrently, allowing for efficient and responsive code execution. Swift provides several features and APIs to support concurrency, including async/await, structured concurrency, and concurrent data structures. This documentation will cover these concepts and provide an overview of concurrency in Swift.
 
 Async/Await:
@@ -1341,9 +1460,9 @@ Q10: What are some common challenges in concurrent programming, and how does Swi
 A10: Common challenges in concurrent programming include race conditions, deadlocks, and thread safety. Swift concurrency addresses these challenges by providing structured concurrency, thread-safe concurrent data structures, and automatic thread management through async/await, reducing the likelihood of such issues.
 
 These interview questions and answers cover the fundamental aspects of concurrency in Swift. They can help assess a candidate's understanding of async/await, structured concurrency, and handling concurrent tasks and resources safely and efficiently.
-User
-interview questions on Type Casting
-ChatGPT
+
+# Type Casting
+
 Certainly! Here are some interview questions related to type casting in Swift along with their answers:
 
 Q1: What is type casting in Swift?
@@ -1591,9 +1710,9 @@ Q10: What are the restrictions of using extensions in Swift?
 A10: Extensions cannot override existing functionality, add stored properties, or access private members of a type. They can only add new computed properties, methods, initializers, and conform to protocols.
 
 These interview questions and answers cover the fundamental aspects of extensions in Swift. They can help assess a candidate's understanding of extending types, the types of functionality that can be added, and the benefits of using extensions for code modularity and reusability.
-User
-complete documenation on Protocols in swift
-ChatGPT
+
+# Protocols in swift
+
 Protocols in Swift are used to define a blueprint of methods, properties, and other requirements that a conforming type must implement. They allow for the specification of a contract or interface that types can adhere to, enabling code reuse, modularity, and polymorphism. This documentation provides a comprehensive overview of protocols in Swift.
 
 Declaring a Protocol:
@@ -1777,9 +1896,9 @@ Q10: How do protocols contribute to code reusability and maintainability?
 A10: Protocols in Swift provide a way to define common behavior and requirements that can be adopted by multiple types. This promotes code reusability and helps in building modular, maintainable code by separating concerns and enabling loose coupling between components.
 
 These interview questions and answers cover the key concepts and features of protocols in Swift. They can help assess a candidate's understanding of protocols, their usage, and their benefits in achieving code reuse and modularity.
-User
-complete documentation on Automatic Reference Counting
-ChatGPT
+
+# Automatic Reference Counting
+
 Automatic Reference Counting (ARC) is a memory management mechanism used in Swift to automatically track and manage the allocation and deallocation of objects. ARC keeps track of how many references to an object exist and automatically deallocates objects that are no longer being used. This documentation provides a comprehensive overview of Automatic Reference Counting in Swift.
 
 How ARC Works:
@@ -1851,24 +1970,154 @@ Dispatch queues are a fundamental concept in Swift's Grand Central Dispatch (GCD
     - They can be either serial or concurrent, depending on the specified attributes.
     - Custom queues allow for fine-grained control over task execution, such as specifying the queue type and dispatching tasks asynchronously or synchronously.
 
-Operation Queues:
------------------
-Operation queues are built on top of dispatch queues and provide additional functionality for managing and executing operations. They are part of the `Foundation` framework in Swift.
+# Concurrent vs Serial DispatchQueue: Concurrency in Swift explained
+Concurrent and Serial queues help us to manage how we execute tasks and help to make our applications run faster, more efficiently, and with improved responsiveness. We can create queues easily using the DispatchQueue class which is built on top of the Grand Central Dispatch (GCD) queue.
 
-1. Main Operation Queue:
-    - Similar to the main dispatch queue, the main operation queue is associated with the main thread.
-    - It is responsible for executing `Operation` objects related to the user interface.
-    - Dispatching operations to the main operation queue ensures they are executed on the main thread for UI-related tasks.
+The benefit of dispatch queues is that they’re a lot simpler to understand and more efficient at executing tasks on different threads compared to the lower level GCD threading code.
+## What is a dispatch queue?
+A DispatchQueue is an abstraction layer on top of the GCD queue that allows you to perform tasks asynchronously and concurrently in your application. Tasks are always executed in the order they’re added to the queue.
 
-2. Custom Operation Queues:
-    - Custom operation queues can be created using the `OperationQueue` class.
-    - They support both serial and concurrent execution modes, depending on the `maxConcurrentOperationCount` property.
-    - Custom operation queues provide features like dependency management between operations, setting maximum concurrent operation counts, and priority-based execution.
+## What is a serial queue?
+A serial Dispatch Queue performs only one task at the time. Serial queues are often used to synchronize access to a specific value or resource to prevent data races to occur.
 
-3. Operation Dependencies:
-    - Operation queues allow for defining dependencies between operations.
-    - An operation can depend on one or more other operations, and it will not start executing until its dependencies are finished.
-    - This allows for complex task dependencies and ensures proper order and synchronization of operations.
+### Creating a serial dispatch queue
+A DispatchQueue defaults to a serial queue and can be initialized as follows:
+```
+let serialQueue = DispatchQueue(label: "swiftlee.serial.queue")
+
+serialQueue.sync {
+    print("Task 1 started")
+    // Do some work..
+    print("Task 1 finished")
+}
+serialQueue.sync {
+    print("Task 2 started")
+    // Do some work..
+    print("Task 2 finished")
+}
+```
+```
+/*
+Serial Queue prints:
+Task 1 started
+Task 1 finished
+Task 2 started
+Task 2 finished
+*/
+```
+As you can see, the second task only starts after the first task is finished.
+
+## What is a concurrent queue?
+A concurrent queue allows us to execute multiple tasks at the same time. Tasks will always start in the order they’re added but they can finish in a different order as they can be executed in parallel. Tasks will run on distinct threads that are managed by the dispatch queue. The number of tasks running at the same time is variable and depends on system conditions.
+
+### Creating a concurrent dispatch queue
+A concurrent dispatch queue can be created by passing in an attribute as a parameter to the DispatchQueue initializer:
+```
+let concurrentQueue = DispatchQueue(label: "swiftlee.concurrent.queue", attributes: .concurrent)
+
+concurrentQueue.async {
+    print("Task 1 started")
+    // Do some work..
+    print("Task 1 finished")
+}
+concurrentQueue.async {
+    print("Task 2 started")
+    // Do some work..
+    print("Task 2 finished")
+}
+```
+```
+/*
+Concurrent Queue prints:
+Task 1 started
+Task 2 started
+Task 1 finished
+Task 2 finished
+*/
+```
+As you can see, the second task already starts before the first task is finished. This means that both tasks have run in parallel.
+
+The best of both worlds
+In some cases, it’s valuable to benefit from the concurrent queue to perform multiple tasks at the same time while still preventing data races. This is possible by making use of a so-called barrier. Before we dive in, it’s good to know what a data race exactly is.
+
+## What is a data race?
+A data race can occur when multiple threads access the same memory without synchronization and at least one access is a write. You could be reading values from an array from the main thread while a background thread is adding new values to that same array.
+
+Data races can be the root cause behind flaky tests and weird crashes. Therefore, it’s good practice to regularly spend time using the Thread Sanitizer.
+
+Using a barrier on a concurrent queue to synchronize writes
+A barrier flag can be used to make access to a certain resource or value thread-safe. We synchronize write access while we keep the benefit of reading concurrently.
+
+The following code demonstrates a messenger class that can be accessed from multiple threads at the same time. Adding new messages to the array is done using the barrier flag which blocks new reads until the write is finished.
+```
+final class Messenger {
+
+    private var messages: [String] = []
+
+    private var queue = DispatchQueue(label: "messages.queue", attributes: .concurrent)
+
+    var lastMessage: String? {
+        return queue.sync {
+            messages.last
+        }
+    }
+
+    func postMessage(_ newMessage: String) {
+        queue.sync(flags: .barrier) {
+            messages.append(newMessage)
+        }
+    }
+}
+
+let messenger = Messenger()
+// Executed on Thread #1
+messenger.postMessage("Hello SwiftLee!")
+// Executed on Thread #2
+print(messenger.lastMessage) // Prints: Hello SwiftLee!
+```
+You can see a barrier as a task that gets in the way of parallel tasks and, for a moment, makes a concurrent queue a serial queue. A task executed with a barrier is delayed until all previously submitted tasks are finished executing. After the last task is finished, the queue executes the barrier block and resumes its normal execution behavior after that.
+
+## Asynchronous vs synchronous tasks
+A DispatchQueue task can be run synchronously or asynchronously. The main difference occurs when you create the task.
+
+Synchronously starting a task will block the calling thread until the task is finished
+Asynchronously starting a task will directly return on the calling thread without blocking
+Say you would add a task to the queue from the main thread, you want to prevent yourself from using the sync method for long-running tasks. This would block the main thread and makes your UI unresponsive.
+
+## How about the main thread?
+The main dispatch queue is a globally available serial queue executing tasks on the application’s main thread. As the main thread is used for UI updates it’s important to be conscious when executing tasks on this queue. Therefore, it’s valuable to use the earlier described dispatch APIs to perform tasks on a different thread.
+
+You can start doing the heavy lifting on a background queue and dispatch back to the main queue when you’re done.
+```
+let concurrentQueue = DispatchQueue(label: "swiftlee.concurrent.queue", attributes: .concurrent)
+
+concurrentQueue.async {
+    // Perform the data request and JSON decoding on the background queue.
+    fetchData()
+
+    DispatchQueue.main.async {
+        /// Access and reload the UI back on the main queue.
+        tableView.reloadData()
+    }
+}
+```
+Avoiding excessive thread creation
+After reading this blog post it might be tempting to create a lot of queues to gain better performance in your app. Unfortunately, creating threads comes with a cost and you should, therefore, avoid excessive thread creation.
+
+There are two common scenarios in which excessive thread creation occurs:
+
+Too many blocking tasks are added to concurrent queues forcing the system to create additional threads until the system runs out of threads for your app
+Too many private concurrent dispatch queues exist that all consume thread resources.
+How to prevent excessive thread creation?
+It’s best practice to make use of the global concurrent dispatch queues. This prevents you from creating too many private concurrent queues. Apart from this, you should still be conscious of executing long-blocking tasks.
+
+You can make use of the global concurrent queue as follows:
+```
+DispatchQueue.global().async {
+    /// Concurrently execute a task using the global concurrent queue. Also known as the background queue.
+}
+```
+This global concurrent queue is also known as the background queue and used next to the DispatchQueue.main.
 
 Dispatch Groups:
 ----------------
@@ -1924,9 +2173,9 @@ Q10: How can you synchronize access to a shared queue in Swift?
 A10: In Swift, you can use techniques such as serial dispatch queues, concurrent dispatch queues with appropriate synchronization mechanisms, or synchronization primitives like locks or semaphores to synchronize access to a shared queue.
 
 These interview questions cover the fundamental concepts and features of queues. They can help assess a candidate's understanding of queues, their types, implementation, and their role in managing data and concurrency.
-User
-complete documentation on core data
-ChatGPT
+
+# core data 
+https://medium.com/@ankurvekariya/core-data-crud-with-swift-4-2-for-beginners-40efe4e7d1cc
 Core Data is a powerful framework provided by Apple for managing the persistence of data in iOS, macOS, watchOS, and tvOS applications. It allows developers to model, store, and retrieve data using a high-level object-oriented interface. This documentation provides a comprehensive overview of Core Data and its key concepts.
 
 Introduction to Core Data:
@@ -1992,7 +2241,7 @@ Core Data Performance:
 Conclusion:
 ------------
 Core Data is a robust and versatile framework for managing data persistence in iOS, macOS, watchOS, and tvOS applications. It simplifies data management, provides a high-level object-oriented interface, and supports advanced features like data modeling, relationships, and data migration. Understanding the key concepts and utilizing the powerful API provided by Core Data
-ChatGPT
+
 enables efficient and reliable data management in your applications.
 User
 interview questions on core data
@@ -2035,8 +2284,8 @@ A10: To improve Core Data performance, you can use fetch request optimizations s
 
 These interview questions cover the fundamental concepts and features of Core Data. They can help assess a candidate's understanding of data modeling, object management, fetching data, relationships, data migration, concurrency, and performance optimization in Core Data.
 User
-complete documentation on mvc design pattern
-ChatGPT
+# mvc design pattern
+
 Model-View-Controller (MVC) is a software architectural pattern commonly used in the development of user interface (UI) applications. It divides an application into three interconnected components: the Model, the View, and the Controller. This documentation provides a comprehensive overview of the MVC design pattern and its key concepts.
 
 Introduction to MVC:
@@ -2144,9 +2393,9 @@ Q10: How would you decide when to use MVC in a project?
 A10: The decision to use MVC depends on various factors such as project requirements, complexity, team expertise, and expected future changes. MVC is suitable for projects where a clear separation between data, presentation, and user interaction is necessary, and code modularity and maintainability are important.
 
 These interview questions cover the fundamental concepts of the MVC design pattern. They can help assess a candidate's understanding of the roles and responsibilities of each component, the benefits of using MVC, the flow of data, and the suitability of MVC for different project scenarios.
-User
-complete documentation on encode and decode swift
-ChatGPT
+
+# encode and decode swift
+
 Encoding and decoding in Swift refer to the process of converting data structures (such as objects or values) to a format that can be stored or transmitted, and vice versa. This documentation provides a comprehensive overview of encoding and decoding in Swift using the Codable protocol.
 
 Introduction to Encoding and Decoding:

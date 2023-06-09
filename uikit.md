@@ -1,85 +1,80 @@
-Swift UIKit Views & Controls
-User
-complete documentation on Views and controls swift uikit
-ChatGPT
-Views and Controls in Swift with UIKit
+
+# Views and controls swift uikit
 
 Introduction:
 UIKit is a framework in Swift that provides a set of user interface components for building iOS applications. Views and controls are fundamental building blocks in UIKit that allow you to create interactive user interfaces. In this documentation, we will explore various views and controls available in UIKit and how to use them in Swift.
 
-1. UIView:
+## 1. UIView:
 UIView is a basic building block for creating visual elements in UIKit. It is a rectangular area on the screen that can display content and respond to user interactions. Here are some common properties and methods associated with UIView:
 
-Properties:
+### Properties:
 - frame: Defines the position and size of the view within its superview.
 - backgroundColor: Sets the background color of the view.
 - alpha: Controls the transparency of the view.
 - isHidden: Indicates whether the view is hidden or visible.
 
-Methods:
+### Methods:
 - addSubview(_:): Adds a subview to the view.
 - removeFromSuperview(): Removes the view from its superview.
 - bringSubview(toFront:): Brings a subview to the front.
 
-2. UIControl:
+## 2. UIControl:
 UIControl is a subclass of UIView that provides event-driven behavior and user interactions. It is used as a base class for various interactive controls like buttons, sliders, and switches. UIControl defines a set of common properties and methods for handling user interactions:
 
-Properties:
+### Properties:
 - isEnabled: Indicates whether the control is enabled or disabled.
 - isHighlighted: Indicates whether the control is currently highlighted.
 - isSelected: Indicates whether the control is currently selected.
 
-Methods:
+### Methods:
 - addTarget(_:action:for:): Registers a target-action pair to handle a specific control event.
 - removeTarget(_:action:for:): Removes a target-action pair for a control event.
 - sendActions(for:): Triggers the associated actions for a specific control event.
 
-3. UIButton:
+## 3. UIButton:
 UIButton is a subclass of UIControl and represents a clickable button in UIKit. It is used for triggering actions when the user taps on it. Here are some commonly used properties and methods of UIButton:
 
-Properties:
+### Properties:
 - titleLabel: Gives access to the label of the button.
 - setTitle(_:for:): Sets the title text of the button for a given state.
 - setImage(_:for:): Sets the image of the button for a given state.
 - addTarget(_:action:for:): Registers a target-action pair for handling button taps.
 
-Methods:
+### Methods:
 - setTitleColor(_:for:): Sets the title color of the button for a given state.
 - setBackgroundColor(_:for:): Sets the background color of the button for a given state.
 - setAttributedTitle(_:for:): Sets an attributed title for the button for a given state.
 
-4. UILabel:
+## 4. UILabel:
 UILabel is a view that displays one or multiple lines of static text. It is commonly used for displaying headings, descriptions, or any other textual information. Here are some useful properties and methods of UILabel:
 
-Properties:
+### Properties:
 - text: Sets the text content of the label.
 - textColor: Sets the color of the label's text.
 - font: Sets the font used for the label's text.
 - numberOfLines: Specifies the maximum number of lines for displaying the text.
 
-Methods:
+### Methods:
 - sizeToFit(): Resizes the label to fit its content.
 - attributedText: Sets an attributed string as the label's text.
 
-5. UITextField:
+## 5. UITextField:
 UITextField is a control that allows users to enter text. It provides a text editing area and a keyboard for input. Here are some commonly used properties and methods of UITextField:
 
-Properties:
+### Properties:
 - text: Gets or sets the text content of the text field.
 - placeholder: Sets the placeholder text that appears when the text field is empty.
 - delegate: Sets the delegate object that handles text field-related events.
 - isSecureTextEntry: Specifies whether the entered text should be obscured for sensitive data like passwords.
 
-Methods:
+### Methods:
 - addTarget(_:action:for:): Registers a target
-ChatGPT
 -action pair for handling specific text field events.
 - resignFirstResponder(): Resigns the first responder status, dismissing the keyboard.
 
 These are just a few examples of views and controls available in UIKit. UIKit provides many more components like UIImageView, UITableView, UIPickerView, and more, each serving different purposes in building iOS applications. You can explore the UIKit framework documentation for a comprehensive list of views and controls along with their properties and methods.
-User
-complete documentation on UIView 
-ChatGPT
+
+# UIView 
 UIView in UIKit - Complete Documentation
 
 UIView is a fundamental class in UIKit that represents a rectangular area on the screen and serves as a building block for creating visual elements in iOS applications. It provides a versatile set of properties, methods, and functionality to handle various aspects of the view's appearance and behavior. This documentation provides a comprehensive overview of UIView and its capabilities.
@@ -91,7 +86,7 @@ To create a UIView instance programmatically, you can use the initializer `init(
 let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
 ```
 
-Properties:
+## Properties:
 
 1. frame: Defines the position and size of the view within its superview. It is represented by a CGRect, specifying the origin (x, y) and size (width, height) of the view.
 
@@ -173,7 +168,7 @@ view.addGestureRecognizer(gestureRecognizer)
 view.setNeedsDisplay()
 ```
 
-Inheritance:
+## Inheritance:
 UIView inherits from UIResponder and acts as the base class for various UI elements like UILabel, UIButton, UITextField, and more. It provides a common set of properties and methods that are shared among all UIView subclasses.
 
 Subviews and View Hierarchy:
@@ -195,8 +190,7 @@ UIView provides built-in support for basic animations. You can animate changes t
 
 This documentation covers the essential properties and methods of UIView in UIKit. UIView is a versatile class that forms the backbone of the user interface in iOS applications. By leveraging the capabilities of UIView, you can create rich and interactive user interfaces tailored to your specific application requirements.
 User
-interview questions/answer on UIView
-ChatGPT
+### interview questions/answer on UIView
 Sure! Here are some interview questions and answers related to UIView in iOS development:
 
 1. Q: What is UIView in iOS?
@@ -239,9 +233,8 @@ Sure! Here are some interview questions and answers related to UIView in iOS dev
     A: UIView supports gesture recognition through gesture recognizers. You can attach gesture recognizers to a view using the `addGestureRecognizer(_:)` method. Gesture recognizers detect specific gestures, such as taps, swipes, or pinches, and trigger actions when those gestures occur on the view.
 
 These are some common interview questions and answers related to UIView in iOS development. Understanding UIView and its capabilities is essential for building user interfaces in iOS applications.
-User
-complete documentation on UIControl 
-ChatGPT
+
+# UIControl 
 UIControl in UIKit - Complete Documentation
 
 UIControl is a subclass of UIView in UIKit that provides event-driven behavior and user interactions. It acts as a base class for various interactive controls like buttons, sliders, switches, and more. UIControl defines a set of common properties, methods, and events for handling user interactions with these controls. This documentation provides a comprehensive overview of UIControl and its capabilities.
@@ -253,7 +246,7 @@ UIControl is an abstract class, so you typically create instances of its subclas
 let button = UIButton(type: .system)
 ```
 
-Properties:
+## Properties:
 
 1. isEnabled: Indicates whether the control is enabled or disabled. When set to false, the control becomes non-interactive and ignores user interactions.
 
@@ -265,7 +258,7 @@ Properties:
 
 5. contentHorizontalAlignment: Specifies the horizontal alignment of the control's content. It can be set to `.center`, `.left`, `.right`, or `.fill`.
 
-Methods:
+## Methods:
 
 1. addTarget(_:action:for:): Registers a target-action pair to handle a specific control event. The target is typically an object that implements the action method.
 
@@ -293,19 +286,18 @@ button.sendActions(for: .touchUpInside)
 
 7. cancelTracking(with:): Notifies the control that tracking has been canceled. This method is overridden in UIControl subclasses to handle cancellation scenarios.
 
-Inheritance:
+## Inheritance:
 UIControl inherits from UIView and UIResponder. It provides a common set of properties and methods for handling user interactions among all UIControl subclasses.
 
-Control Events:
+## Control Events:
 UIControl defines various control events that can be used to trigger actions. These events include touch events like `.touchUpInside`, `.touchDown`, `.touchDragInside`, and more. You can register targets and actions for specific control events using the `addTarget(_:action:for:)` method.
 
-Subclassing UIControl:
+## Subclassing UIControl:
 You can subclass UIControl to create custom controls with specialized behavior. By overriding the appropriate methods and handling control events, you can create interactive controls that meet your specific requirements.
 
 This documentation covers the essential properties and methods of UIControl in UIKit. UIControl provides a foundation for building interactive controls in iOS applications, allowing you to respond to user interactions and create engaging user interfaces.
-User
-complete documentation on UIButton 
-ChatGPT
+
+# UIButton 
 UIButton in UIKit - Complete Documentation
 
 UIButton is a subclass of UIControl in UIKit that represents a button control in iOS applications. It provides a clickable area that triggers actions when tapped. UIButton inherits properties and methods from UIControl and adds additional functionality specific to buttons. This documentation provides a comprehensive overview of UIButton and its capabilities.
@@ -324,7 +316,7 @@ UIButton supports different button types that affect its appearance and behavior
 - .custom: A button with a custom appearance that you can configure.
 - .roundedRect: A rounded rectangular button with a default appearance.
 
-Properties:
+## Properties:
 
 1. titleLabel: A UILabel that represents the button's title. You can configure various properties of the title label, such as text, font, color, alignment, etc.
 
@@ -390,7 +382,7 @@ button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
 button.removeTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
 ```
 
-Inheritance:
+## Inheritance:
 UIButton inherits from UIControl, which in turn inherits from UIView and UIResponder. It provides a common set of properties and methods for handling user interactions.
 
 Button States:
@@ -402,9 +394,8 @@ ChatGPT
 for:)` method.
 
 This documentation covers the essential properties and methods of UIButton in UIKit. UIButton provides a versatile and interactive way to incorporate buttons in your iOS applications, allowing users to trigger actions and navigate through your app's interface.
-User
-complete documentation on UITextField
-ChatGPT
+
+# UITextField
 UITextField in UIKit - Complete Documentation
 
 UITextField is a subclass of UIControl in UIKit that provides a text entry and editing interface in iOS applications. It allows users to input text, such as usernames, passwords, search queries, and more. UITextField inherits properties and methods from UIControl and adds additional functionality specific to text input. This documentation provides a comprehensive overview of UITextField and its capabilities.
@@ -419,7 +410,7 @@ let textField = UITextField(frame: CGRect(x: 0, y: 0, width: 200, height: 40))
 Text Entry and Editing:
 UITextField provides various properties and methods for text entry and editing.
 
-Properties:
+## Properties:
 
 1. text: The current text entered in the text field.
 
@@ -463,7 +454,7 @@ textField.keyboardType = .default
 textField.returnKeyType = .done
 ```
 
-Methods:
+## Methods:
 
 1. becomeFirstResponder(): Makes the text field the first responder, displaying the keyboard and enabling text input.
 
@@ -491,13 +482,13 @@ UITextField triggers events when specific actions occur, such as text changes or
 textField.addTarget(self, action: #selector(textFieldChanged(_:)), for: .editingChanged)
 ```
 
-Inheritance:
+## Inheritance:
 UITextField inherits from UIControl, which in turn inherits from UIView and UIResponder. It provides a common set of properties and methods for handling user interactions.
 
 This documentation covers the essential properties, methods, and concepts related to UITextField in UIKit. UITextField offers a flexible and interactive way to incorporate text input in your iOS applications, allowing users to enter and edit text effortlessly.
-User
-complete documentation on Collection views 
-ChatGPT
+
+# Collection views 
+
 UICollectionView in UIKit - Complete Documentation
 
 UICollectionView is a powerful and versatile class in UIKit that allows you to create customizable and dynamic collection views in iOS applications. It provides a flexible grid-based layout that displays a collection of cells, similar to UITableView but with more advanced layout options. This documentation provides a comprehensive overview of UICollectionView and its capabilities.
@@ -519,7 +510,7 @@ collectionView.delegate = self
 UICollectionViewFlowLayout:
 UICollectionViewFlowLayout is a built-in layout class that provides a simple grid-based layout. It arranges cells in a single row or column, with optional spacing and item sizes.
 
-Properties:
+## Properties:
 
 1. itemSize: The size of each cell in the collection view.
 
@@ -548,7 +539,7 @@ layout.scrollDirection = .vertical
 UICollectionViewDataSource:
 UICollectionViewDataSource is a protocol that defines methods for providing the data and content of the collection view.
 
-Methods:
+## Methods:
 
 1. collectionView(_:numberOfItemsInSection:): Returns the number of items in a specified section.
 
@@ -568,10 +559,10 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
 }
 ```
 
-UICollectionViewDelegate:
+## UICollectionViewDelegate:
 UICollectionViewDelegate is a protocol that defines methods for handling interactions and events in the collection view.
 
-Methods:
+### Methods:
 
 1. collectionView(_:didSelectItemAt:): Called when a cell is selected by the user.
 
@@ -598,7 +589,7 @@ func collectionView(_ collectionView: UICollectionView, layout collectionViewLay
 }
 ```
 
-UICollectionViewCell:
+## UICollectionViewCell:
 UICollectionViewCell is a subclass of UIView that represents an individual item or cell in the collection view. It can be customized to display different types of content.
 
 Subclassing UICollectionViewCell:
@@ -613,7 +604,7 @@ class CustomCell: UICollectionViewCell {
 UICollectionViewFlowLayoutDelegate:
 UICollectionViewFlowLayoutDelegate is a protocol that provides additional control over the layout of the collection view using a UICollectionViewFlowLayout.
 
-Methods:
+### Methods:
 
 1. collectionView(_:layout:inset
 ChatGPT
@@ -633,7 +624,7 @@ func collectionView(_ collectionView: UICollectionView, layout collectionViewLay
 }
 ```
 
-Inheritance:
+## Inheritance:
 UICollectionView inherits from UIScrollView, which in turn inherits from UIView. It provides scrolling and zooming capabilities along with the collection view features.
 
 This documentation covers the essential properties, methods, and concepts related to UICollectionView in UIKit. UICollectionView offers a powerful and customizable way to present and interact with collections of items in your iOS applications.
@@ -658,14 +649,13 @@ To implement a UICollectionView and handle interactions with its cells, you woul
 5. Customize the layout: If needed, you can customize the UICollectionViewLayout or use the built-in UICollectionViewFlowLayout to control the layout of the collection view. This includes specifying item sizes, minimum spacing between items, scroll direction, and more.
 
 By following these steps, you can effectively implement a UICollectionView and handle interactions with its cells in your iOS app. It allows you to display and manage a dynamic collection of items, providing an intuitive and interactive user experience.
-User
-complete documenatation on Table views with example implementation
-ChatGPT
+
+# Table views 
 UITableView in UIKit - Complete Documentation
 
 UITableView is a fundamental class in UIKit that provides a scrollable list of rows organized into sections. It is widely used to display and manage tabular data in iOS applications. UITableView is highly customizable and supports various cell types and layouts. This documentation provides a comprehensive overview of UITableView and its capabilities, along with an example implementation.
 
-Creating a UITableView:
+### Creating a UITableView:
 To create a UITableView, you need to follow these steps:
 
 1. Create an instance of UITableView either programmatically or using Interface Builder.
@@ -689,7 +679,7 @@ let tableView = UITableView(frame: CGRect.zero, style: .grouped)
 UITableViewDataSource:
 UITableViewDataSource is a protocol that defines methods for providing the data and content of the table view.
 
-Methods:
+## Methods:
 
 1. tableView(_:numberOfRowsInSection:): Returns the number of rows in a specified section.
 
@@ -709,7 +699,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 }
 ```
 
-UITableViewDelegate:
+## UITableViewDelegate:
 UITableViewDelegate is a protocol that defines methods for handling interactions and events in the table view.
 
 Methods:
@@ -750,7 +740,7 @@ func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.Ed
 }
 ```
 
-UITableViewCell:
+## UITableViewCell:
 UITableViewCell is a built-in class that represents a single row in the table view. It can be customized to display various types of content.
 
 Subclassing UITableViewCell:
@@ -762,7 +752,7 @@ class CustomCell: UITableViewCell {
 }
 ```
 
-Inheritance:
+## Inheritance:
 UITableView inherits from UIScrollView, which in turn inherits from UIView. It provides scrolling and zooming capabilities along with the table view features.
 
 Example Implementation:
@@ -855,14 +845,14 @@ tableView.reloadData()
 ```
 
 These interview questions cover some of the key concepts and aspects of UITableView. Make sure to understand the UITableViewDataSource and UITableViewDelegate protocols, as well as the various customization options and methods available in UITableView.
-User
-complete documentation on UIScrollView with implemenatation
-ChatGPT
+
+# UIScrollView with implemenatation
+
 UIScrollView in UIKit - Complete Documentation
 
 UIScrollView is a versatile class in UIKit that enables users to scroll and zoom content that is larger than the visible area. It provides a scrollable view container for displaying content such as images, text, or custom views. This documentation provides a comprehensive overview of UIScrollView and its capabilities, along with an example implementation.
 
-Creating a UIScrollView:
+## Creating a UIScrollView:
 To create a UIScrollView, you need to follow these steps:
 
 1. Initialize a UIScrollView instance either programmatically or using Interface Builder.
@@ -877,7 +867,7 @@ scrollView.contentSize = CGSize(width: 400, height: 400)
 Scrolling and Zooming:
 UIScrollView provides built-in support for scrolling and zooming. You can enable scrolling in both horizontal and vertical directions and adjust the zoom scale to allow users to zoom in and out on the content.
 
-Properties:
+## Properties:
 
 1. contentOffset: The current scroll position of the scroll view.
 2. contentSize: The size of the content that is scrollable within the scroll view.
@@ -893,7 +883,7 @@ scrollView.minimumZoomScale = 0.5
 scrollView.maximumZoomScale = 2.0
 ```
 
-UIScrollViewDelegate:
+## UIScrollViewDelegate:
 UIScrollViewDelegate is a protocol that defines methods for tracking and responding to scroll view events and interactions.
 
 Methods:
@@ -944,9 +934,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 In this example, a UIScrollView is created and added to the view hierarchy. An UIImageView is added as a subview to the scroll view to display a large image. The UIScrollViewDelegate method `viewForZooming(in:)` is implemented to specify the view that should be zoomed in response to zoom gestures.
 
 UIScrollView offers flexible scrolling and zooming capabilities, allowing you to display and interact with content that extends beyond the visible area. It is a fundamental component in building scrollable interfaces in iOS applications.
-User
-complete documenetation on layout constraints
-ChatGPT
+
+# layout constraints
+
 Auto Layout and Layout Constraints - Complete Documentation
 
 Auto Layout is a powerful layout system in iOS that allows you to create adaptive and flexible user interfaces. It uses layout constraints to define the relationships and rules for positioning and sizing views within a view hierarchy. This documentation provides a comprehensive overview of Auto Layout and layout constraints, along with examples of their implementation.
@@ -1014,17 +1004,17 @@ Compatibility with Size Classes:
 Size classes are an abstraction in iOS that allow you to design adaptive layouts for different device sizes and orientations. Auto Layout works in conjunction with size classes to enable dynamic layout adjustments based on the current size class.
 
 Auto Layout is a powerful and flexible layout system in iOS that provides adaptive and responsive user interfaces. By defining layout constraints, you can create complex and dynamic layouts that adapt to different screen sizes and orientations.
-User
-complete documenatation on delegates in swift with examples 
-ChatGPT
-Delegates in Swift - Complete Documentation
+
+
+# Delegates in Swift - Complete Documentation
 
 Delegates are a design pattern commonly used in Swift and other object-oriented programming languages. They allow one object to communicate and pass data or events to another object. This documentation provides a comprehensive overview of delegates in Swift, along with examples of their implementation.
 
-Introduction to Delegates:
+
+:
 Delegates provide a way for objects to delegate tasks or responsibilities to another object. In Swift, delegates are typically implemented using protocols, where a protocol defines a set of methods and properties that the delegate should implement.
 
-Key Concepts:
+## Key Concepts:
 
 1. Protocol: A protocol in Swift is a blueprint of methods, properties, and other requirements that a class, structure, or enumeration can conform to. Protocols define the interface that delegates must adhere to.
 
@@ -1032,7 +1022,7 @@ Key Concepts:
 
 3. Delegating Object: The delegating object is the object that needs to communicate with its delegate. It holds a weak reference to the delegate and sends messages to it when specific events or actions occur.
 
-Implementing Delegates:
+## Implementing Delegates:
 
 To implement delegates in Swift, you need to follow these steps:
 
@@ -1106,9 +1096,9 @@ class ViewController: UIViewController, DataManagerDelegate {
 
 In this example, a DataManager class fetches data and notifies its delegate when the data is received. The ViewController class conforms to the DataManagerDelegate protocol and acts as the delegate. It receives the data through the `didReceiveData(data:)` method and handles it accordingly.
 
-Delegates are a powerful mechanism for communication between objects in Swift. They promote loose coupling and separation of concerns, allowing for modular and reusable code. By defining and implementing delegates, you can establish flexible and customizable interactions between different components of your application.
+ Delegates are a powerful mechanism for communication between objects in Swift. They promote loose coupling and separation of concerns, allowing for modular and reusable code. By defining and implementing delegates, you can establish flexible and customizable interactions between different components of your application.
 User
-interview questions on delegates.
+## interview questions on delegates.
 ChatGPT
 Certainly! Here are some common interview questions related to delegates:
 
@@ -1145,14 +1135,12 @@ Question 8: What are some alternatives to delegates in iOS development?
 Answer: Apart from delegates, alternatives to achieving communication between objects in iOS development include using closures, notifications (NotificationCenter), and Key-Value Observing (KVO). Each alternative has its own use cases and considerations, and the choice depends on the specific requirements of the project.
 
 These interview questions cover the fundamental concepts and usage of delegates in Swift. Understanding delegates is essential for developing modular, customizable, and maintainable iOS applications.
-User
-complete documentation on AVFoundation 
-ChatGPT
-AVFoundation - Complete Documentation
+
+# AVFoundation - Complete Documentation
 
 AVFoundation is a powerful framework provided by Apple in iOS and macOS that allows developers to work with audiovisual media in their applications. It provides a wide range of APIs for capturing, playing, editing, and exporting various types of media content. This documentation provides a comprehensive overview of AVFoundation, its key components, and examples of their usage.
 
-Key Components of AVFoundation:
+## Key Components of AVFoundation:
 
 1. AVAsset: AVAsset represents a media resource, such as a video or audio file. It provides access to the underlying media data, including its duration, tracks, and metadata. You can use AVAsset to load and manage media assets for playback or manipulation.
 
@@ -1240,14 +1228,13 @@ ampleBuffer, from connection: AVCaptureConnection) {
     }
 }
 ```
-
 AVFoundation provides extensive functionality for working with audiovisual media in iOS and macOS applications. The framework offers a rich set of APIs for playback, capture, editing, and export of media assets. By leveraging AVFoundation, developers can create engaging multimedia experiences in their apps.
 User
 interview questions on avfoundation
 ChatGPT
 Certainly! Here are some common interview questions related to AVFoundation:
 
-Question 1: What is AVFoundation in iOS?
+## Question 1: What is AVFoundation in iOS?
 
 Answer: AVFoundation is a framework provided by Apple in iOS for working with audiovisual media. It offers a wide range of APIs for capturing, playing, editing, and exporting various types of media content, including video, audio, and images.
 
@@ -1281,8 +1268,8 @@ Answer: AVFoundation provides error handling mechanisms through NSError instance
 
 These interview questions cover the fundamental concepts and usage of AVFoundation in iOS development. Understanding AVFoundation is crucial for working with audiovisual media and implementing various multimedia features in your applications.
 User
-complete documentation on uiImageview and uiimage include how can i show image from a url.
-ChatGPT
+# uiImageview and uiimage include how can i show image from a url.
+
 UIImageView - Complete Documentation
 
 UIImageView is a fundamental component in UIKit that provides a way to display images in iOS and macOS applications. It is a subclass of UIView and provides various properties and methods to manage and manipulate images. This documentation provides a comprehensive overview of UIImageView, its key features, and examples of usage.
@@ -1299,7 +1286,7 @@ Key Features of UIImageView:
 
 5. Interaction: UIImageView inherits from UIView, so it can respond to user interactions such as taps and gestures. You can attach gesture recognizers or implement the appropriate delegate methods to handle user interactions with the image view.
 
-Displaying an Image from a URL:
+### Displaying an Image from a URL:
 
 To display an image from a URL in a UIImageView, you need to follow these steps:
 
@@ -1393,7 +1380,7 @@ imageView.contentMode = .scaleAspectFit
 ```
 The `contentMode` property determines how the image is displayed within the bounds of the UIImageView. You can set it to different values, such as `.scaleAspectFit`, `.scaleAspectFill`, `.center`, etc., to control the image's aspect ratio, scaling, and alignment.
 
-Animating Images:
+### Animating Images:
 ```swift
 imageView.animationImages = [UIImage(named: "image1"), UIImage(named: "image2"), UIImage(named: "image3")]
 imageView.animationDuration = 1.0
@@ -1435,8 +1422,8 @@ class ViewController: UIViewController {
 In this example, a UIImageView is created and configured with an image, content mode, and animation. The image view is then added as a subview to the view controller's view.
 
 UIImageView provides a flexible and easy-to-use way to display images in iOS and macOS applications. By leveraging its properties and methods, you can customize image presentation, handle user interactions, and animate image sequences.
-User
-how to call api and update ui based on api response in uikit
+
+# how to call api and update ui based on api response in uikit
 ChatGPT
 To call an API and update the UI based on the API response in UIKit, you can follow these steps:
 
