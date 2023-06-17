@@ -135,7 +135,7 @@ for (const key in a) {
    console.log(key, a[key]);
 }
 ```
-
+Note we need to do a[key] to access value if i write a.key then it will `undefined`
 ## Shallow Copy and Deep Copy in JavaScript
 
 In JavaScript, there are two ways to copy objects: shallow copy and deep copy.
