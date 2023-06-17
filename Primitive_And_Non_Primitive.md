@@ -187,7 +187,7 @@ const obj1 = { x: 1, y: 2 };
 const obj2 = { ...obj1 };
 console.log(obj2); // output is { x: 1, y: 2 }
 obj2.y = 100;
-console.log(obj1,obj2); output is { x: 1, y: 2 } { x: 1, y: 100 }
+console.log(obj1,obj2); //output is { x: 1, y: 2 } { x: 1, y: 100 }
 ```
 
 ## Rest Parameter
