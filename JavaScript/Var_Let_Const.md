@@ -24,4 +24,4 @@ When it comes to variable declaration in JavaScript, there are three keywords yo
 Note: The introduction of let and const in ES6 (ECMAScript 2015) improved JavaScript's handling of variable scoping and made it more similar to other programming languages.
 
 
-<img src="../images/let_var_diff.png">
+<img src="../images/let_var_diff.png" width="50%" height="50%">
