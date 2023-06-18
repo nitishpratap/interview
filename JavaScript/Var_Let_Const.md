@@ -22,3 +22,6 @@ When it comes to variable declaration in JavaScript, there are three keywords yo
 * In general, it is recommended to use let and const over var. let provides better scoping and prevents some common issues related to hoisting and variable redeclaration. const should be used for variables that are not intended to be reassigned. By using let and const, you can write more predictable and maintainable code.
 
 Note: The introduction of let and const in ES6 (ECMAScript 2015) improved JavaScript's handling of variable scoping and made it more similar to other programming languages.
+
+
+<img src="../images/let_var_diff.png">
