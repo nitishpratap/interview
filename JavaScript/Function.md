@@ -76,3 +76,65 @@ It is a JavaScript function that is executed as soon as it is defined. It is com
 })();
 
 ```
+### Functions as first-class citizens
+functions can be treated like a variable. Meaning, they can be passed as arguments to other functions. It can be assigned as a value to a variable or even return in a function
+
+1. **Functions can be assigned to variables**:
+```javascript
+const greet = function() {
+  console.log('Hello!');
+};
+
+// The function is assigned to the variable greet
+greet();
+
+```
+2. **Functions can be passed as arguments to other functions**:
+```javascript
+function executeFunction(func) {
+  func();
+}
+
+function greet() {
+  console.log('Hello!');
+}
+
+executeFunction(greet);
+
+```
+3. **Functions can be returned as values from other functions**:
+```javascript
+function createGreeter() {
+  return function() {
+    console.log('Hello!');
+  };
+}
+
+const greet = createGreeter();
+greet();
+
+```
+4. **Functions can be stored in data structures, such as arrays or objects**:
+```javascript
+const functionsArray = [
+  function() {
+    console.log('Function 1');
+  },
+  function() {
+    console.log('Function 2');
+  }
+];
+
+functionsArray[0]();
+
+```
+5. **Functions can have properties and methods**:
+```javascript
+function greet() {
+  console.log('Hello!');
+}
+
+greet.message = 'Welcome'; // Adding a property to the function
+console.log(greet.message);
+
+```
