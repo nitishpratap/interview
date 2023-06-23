@@ -5,7 +5,9 @@ There are so many polyfills available, but I will cover only famous array polyfi
 for example: Internet Explorer does not support to the bind method. So in this case we use polyfill.
 
 ## Polyfill of bind() method.
-```let obj = {
+```
+
+let obj = {
   name: 'Jack',
 };
 
