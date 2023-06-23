@@ -4,6 +4,26 @@ A polyfill is code that implements a feature on web browsers that do not support
 There are so many polyfills available, but I will cover only famous array polyfill code below.
 for example: Internet Explorer does not support to the bind method. So in this case we use polyfill.
 
+## Polyfill of bind() method.
+```let obj = {
+  name: 'Jack',
+};
+
+let myFunc = function () {
+  console.log(`${this.name}`);
+};
+
+Function.prototype.myBind = function (obj) {
+  let func = this;
+  return function () {
+    func.apply(obj);
+  };
+};
+
+let newFunc = myFunc.myBind(obj)
+newFunc() // Jack```
+
+
 ## Polyfill of forEach() method.
 ```javascript
 Array.prototype.myForEach = function(callback){
