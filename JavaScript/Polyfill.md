@@ -5,7 +5,7 @@ There are so many polyfills available, but I will cover only famous array polyfi
 for example: Internet Explorer does not support to the bind method. So in this case we use polyfill.
 
 ## Polyfill of bind() method.
-```
+```javascript
 
 let obj = {
   name: 'Jack',
@@ -23,7 +23,8 @@ Function.prototype.myBind = function (obj) {
 };
 
 let newFunc = myFunc.myBind(obj)
-newFunc() // Jack```
+newFunc() // Jack
+```
 
 
 ## Polyfill of forEach() method.
