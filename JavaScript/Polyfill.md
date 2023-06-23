@@ -2,6 +2,7 @@
 
 A polyfill is code that implements a feature on web browsers that do not support the feature.
 There are so many polyfills available, but I will cover only famous array polyfill code below.
+for example: Internet Explorer does not support to the bind method. So in this case we use polyfill.
 
 ## Polyfill of forEach() method.
 ```javascript
