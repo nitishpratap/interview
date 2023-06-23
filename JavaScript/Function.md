@@ -1,3 +1,6 @@
+# Define a function
+Function is a set of statement that is used to perform a particualr task.
+
 # Declare a function
 To declare a `function`, you use the function keyword, followed by the function name, a list of parameters, and the function body as follows:
 ```javascript
