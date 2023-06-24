@@ -58,6 +58,9 @@ Non-primitive data types are derived from primitive data types in JavaScript. Th
 
 2. **Array**: JavaScript arrays are used to store elements of different data types. Arrays are zero-indexed, and they are not associative in nature.
 
+## Array in JS
+### Creating an array 
+
 ```javascript
 // Creating an array using array literal:
 let courses = ["HTML", "CSS", "JavaScript", "React"];
@@ -79,6 +82,64 @@ console.log("Array 3: ", arr3);
 let arr4 = new Array("1BHK");
 console.log("Array 4: ", arr4);
 ```
+
+### Accessing Elements of an Array
+Any element in the array can be accessed using the index number. The index in the arrays starts with 0.
+```javascript
+const courses = ["HTML", "CSS", "Javascript"];
+console.log(courses[0])
+console.log(courses[1])
+console.log(courses[2])
+
+
+HTML
+CSS
+Javascript
+```
+
+### Convert an Array to String
+```javascript
+const courses = ["HTML", "CSS", "Javascript"];
+console.log(courses.toString())
+//HTML,CSS,Javascript
+```
+### Loop through Javascript Array Elements
+```javascript
+const courses = ["HTML", "CSS", "Javascript"];
+for (let i = 0; i < courses.length; i++) {
+	console.log(courses[i])
+}
+
+
+HTML
+CSS
+Javascript
+```
+### Adding new elements to JavaScript Array
+```javascript
+const courses = ["HTML", "CSS", "Javascript"];
+console.log("Original Array: ",courses)
+courses.push("React")
+console.log("Array after adding an element: ",courses)
+
+
+Output
+Original Array:  [ 'HTML', 'CSS', 'Javascript' ]
+Array after adding an element:  [ 'HTML', 'CSS', 'Javascript', 'React' ]
+```
+* We can also add a new element to a Javascript array using the length property.
+```javascript
+const courses = ["HTML", "CSS", "Javascript"];
+console.log("Original Array: ",courses)
+courses[courses.length] = "React"
+console.log("Array after adding an element: ",courses)
+
+
+Original Array:  [ 'HTML', 'CSS', 'Javascript' ]
+Array after adding an element:  [ 'HTML', 'CSS', 'Javascript', 'React' ]
+```
+### Difference between Javascript arrays and objects
+In JavaScript, arrays use numbered indexes and objects use named indexes.
 
 ### Difference between Primitive and Non-primitive Data Types:
 
