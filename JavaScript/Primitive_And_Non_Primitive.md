@@ -145,8 +145,17 @@ In JavaScript, there are two ways to copy objects: shallow copy and deep copy.
 A shallow copy creates a new object, but any nested objects or arrays within the original object still reference the same memory location. Changes to the nested objects will affect both the original and copied objects. Here's an example of shallow copying using the spread operator:
 
 ```javascript
-const originalObject = { a: 1, b: { c: 2 } };
-const shallowCopy = { ...originalObject };
+// Original object
+const original = { name: "John", age: 25 };
+
+// Shallow copy
+const shallowCopy = original;
+
+// Modifying the copied object
+shallowCopy.age = 30;
+
+console.log(original);     // Output: { name: "John", age: 30 }
+console.log(shallowCopy);  // Output: { name: "John", age: 30 }
 ```
 
 ### Deep Copy
