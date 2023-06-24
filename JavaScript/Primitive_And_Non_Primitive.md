@@ -154,8 +154,16 @@ const shallowCopy = { ...originalObject };
 A deep copy creates a new object with new memory locations for all properties and nested objects or arrays. Changes made to the copied object or its nested objects will not affect the original object. Here's an example of deep copying using JSON methods:
 
 ```javascript
-const originalObject = { a: 1, b: { c: 2 } };
-const deepCopy = JSON.parse(JSON.stringify(originalObject));
+const original = { name: "John", age: 25 };
+
+// Deep copy
+const deepCopy = JSON.parse(JSON.stringify(original));
+
+// Modifying the copied object
+deepCopy.age = 30;
+
+console.log(original);  // Output: { name: "John", age: 25 }
+console.log(deepCopy);  // Output: { name: "John", age: 30 }
 ```
 
 ## Spread Operator
