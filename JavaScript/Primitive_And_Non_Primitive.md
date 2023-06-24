@@ -150,78 +150,77 @@ In JavaScript, arrays use numbered indexes and objects use named indexes.
 ## JavaScript Array Methods
 1. map( )
    This method creates a new array with the results of calling a provided function on every element in this array.
-    <img src="../images/map_primitive.webp">
+    <img src="../images/map_primitive.webp" width = "50%" height = 50%>
 
 2. filter( )
    This method creates a new array with only elements that passes the condition inside the provided function.
-   <img src="../images/filter_primitive.webp">
+   <img src="../images/filter_primitive.webp" width = "50%" height = 50%>
 
 3. sort( )
    This method is used to arrange/sort array’s elements either in ascending or descending order.
-   <img src="../images/sort_primitive.webp">
+   <img src="../images/sort_primitive.webp" width = "50%" height = 50%>
 
 4. forEach( )
    This method helps to loop over array by executing a provided callback function for each element in an array.
-   <img src="../images/foreach_primitive'.webp">
+   <img src="../images/foreach_primitive'.webp" width = "50%" height = 50%>
 5. concat( )
    This method is used to merge two or more arrays and returns a new array, without changing the existing arrays.
-   <img src="../images/concat_primitive.webp">
+   <img src="../images/concat_primitive.webp" width = "50%" height = 50%>
 
 6. every( )
    This method checks every element in the array that passes the condition, returning true or false as appropriate.
-   <img src="../images/every_primitive.webp">
+   <img src="../images/every_primitive.webp" width = "50%" height = 50%>
 
 7. some( )
    This method checks if at least one element in the array that passes the condition, returning true or false as appropriate.
-   <img src="../images/sort_primitive.webp">
+   <img src="../images/sort_primitive.webp" width = "50%" height = 50%>
 
 8. includes( )
    This method checks if an array includes the element that passes the condition, returning true or false as appropriate.
-   <img src="../images/include_primitive.webp">
+   <img src="../images/include_primitive.webp" width = "50%" height = 50%>
 
 9. join( )
    This method returns a new string by concatenating all of the array’s elements separated by the specified separator.
-   <img src="../images/join_primitive.webp">
+   <img src="../images/join_primitive.webp" width = "50%" height = 50%>
 
 10. reduce( )
     This method applies a function against an accumulator and each element in the array to reduce it to a single value.
-    <img src="../images/reduce_primitive.webp">
+    <img src="../images/reduce_primitive.webp" width = "50%" height = 50%>
 
 11. find( )
     This method returns the value of the first element in an array that pass the test in a testing function.
-    <img src="../images/find_primitive.webp">
+    <img src="../images/find_primitive.webp" width = "50%" height = 50%>
 
 12. findIndex( )
     This method returns the index of the first element in an array that pass the test in a testing function.
-    <img src="../images/findIndex.webp">
+    <img src="../images/findIndex.webp" width = "50%" height = 50%>
 
 13. indexOf( )
     This method returns the index of the first occurrence of the specified element in the array, or -1 if it is not found.
-    <img src="../images/indexOf_primitive.webp">
-    <img src="../images/indexOf_primitive.webp">
+    <img src="../images/indexOf_primitive.webp" width = "50%" height = 50%>
 
 14. slice( )
     This method returns a new array with specified start to end elements.
 
-  <img src="../images/slice_primitive.webp">
+  <img src="../images/slice_primitive.webp" width = "50%" height = 50%>
 15. reverse( )
     This method reverses an array in place. Element at last index will be first and element at 0 index will be last.
-    <img src="../images/reverse_primitive.webp">
+    <img src="../images/reverse_primitive.webp"  width = "50%" height = 50%>
 
 16. push( )
     This method adds one or more elements to the end of array and returns the new length of the array.
-  <img src="../images/push_primitive.webp">
+  <img src="../images/push_primitive.webp" width = "50%" height = 50%>
 17. pop( )
     This method removes the last element from the end of array and returns that element.
-    <img src="../images/pop_primitive.webp">
+    <img src="../images/pop_primitive.webp" width = "50%" height = 50%>
 
 18. shift( )
     This method removes the first element from an array and returns that element.
-    <img src="../images/shift_primitive.webp">
+    <img src="../images/shift_primitive.webp" width = "50%" height = 50%>
 
 19. unshift( )
     This method adds one or more elements to the beginning of an array and returns the new length of the array.
-    <img src="../images/unshift_primitive.webp">
+    <img src="../images/unshift_primitive.webp" width = "50%" height = 50%>
 
 
 
