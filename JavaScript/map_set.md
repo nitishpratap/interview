@@ -197,6 +197,7 @@ Use Map when:
 * Your needs are not that simple. You may want to create keys that are non-strings. Storing an object as a key is a very powerful approach. Map gives you this ability by default.
 * You need a data structure where elements can be ordered. Regular objects do not maintain the order of their entries.
 * You are looking for flexibility without relying on an external library like lodash. You may end up using a library like lodash because we do not find methods like has(), values(), delete(), or a property like size with a regular object. Map makes this easy for you by providing all these methods by default.
+
 Use an object when:
 
 * You do not have any of the needs listed above.
