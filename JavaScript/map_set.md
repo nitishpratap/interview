@@ -204,3 +204,97 @@ Use an object when:
 * You rely on JSON.parse() as a Map cannot be parsed with it.
 
 # Set in JS
+A Set is a collection of unique elements that can be of any type. Set is also an ordered collection of elements, which means that elements will be retrieved in the same order that they were inserted in.
+A Set in JavaScript behaves the same way as a mathematical set.
+
+## How to Create and Initialize a Set in JavaScript
+```javascript
+const set = new Set();
+console.log(set);
+
+
+//Output Set(0) {}
+```
+```javascript
+const fruteSet = new Set(['🍉', '🍎', '🍈', '🍏']);
+console.log(fruteSet);
+
+// Set(4) {"🍉", "🍎", "🍈", "🍏"}
+```
+## Set Properties and Methods in JavaScript
+Set has methods to add an element to it, delete elements from it, check if an element exists in it, and to clear it completely:
+* Use the size property to know the size of the Set. It returns the number of elements in it:
+* Use the add(element) method to add an element to the Set:
+```javascript
+set.size
+```
+```javascript
+// Create a set - saladSet
+const saladSet = new Set();
+
+// Add some vegetables to it
+saladSet.add('🍅'); // tomato
+saladSet.add('🥑'); // avocado
+saladSet.add('🥕'); // carrot
+saladSet.add('🥒'); // cucumber
+
+console.log(saladSet);
+
+
+// Output
+
+// Set(4) {"🍅", "🥑", "🥕", "🥒"}
+
+```
+
+```javascript
+saladSet.add('🥒');
+console.log(saladSet);
+
+```
+
+* To remove elements there is `clear()` method
+
+## How to Iterate Over a Set in JavaScript
+Set has a method called values() which returns a SetIterator to get all its values:
+```javascript
+// Create a Set
+const houseNos = new Set([360, 567, 101]);
+
+// Get the SetIterator using the `values()` method
+console.log(houseNos.values());
+
+// SetIterator {360, 567, 101}
+```
+We can use a forEach or for-of loop on this to retrieve the values.
+Interestingly, JavaScript tries to make Set compatible with Map. That's why we find two of the same methods as Map, keys() and entries().
+
+As Set doesn't have keys, the keys() method returns a SetIterator to retrieve its values:
+
+## Sets and Arrays in JavaScript
+An array, like a Set, allows you to add and remove elements. But Set is quite different, and is not meant to replace arrays.
+
+The major difference between an array and a Set is that arrays allow you to have duplicate elements. Also, some of the Set operations like delete() are faster than array operations like shift() or splice().
+
+Think of Set as an extension of a regular array, just with more muscles. The Set data structure is not a replacement of the array. Both can solve interesting problems.
+
+## How to Convert a Set into an array in JavaScript
+```javascript
+const arr = [...houseNos];
+console.log(arr);
+```
+## Unique values from an array using the Set in JavaScript
+Creating a Set is a really easy way to remove duplicate values from an array:
+```javascript
+// Create a mixedFruit array with a few duplicate fruits
+const mixedFruit = ['🍉', '🍎', '🍉', '🍈', '🍏', '🍎', '🍈'];
+
+// Pass the array to create a set of unique fruits
+const mixedFruitSet = new Set(mixedFruit);
+
+console.log(mixedFruitSet);
+
+Output:
+
+    Set(4) {"🍉", "🍎", "🍈", "🍏"}
+```
