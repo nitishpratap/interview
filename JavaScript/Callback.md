@@ -8,7 +8,7 @@ function isOdd(number) {
 
 function filter(numbers, fn) {
     let results = [];
-    for (const number of numbers) {
+    Ffor (const number of numbers) {
         if (fn(number)) {
             results.push(number);
         }

@@ -87,6 +87,18 @@ Map(3)
 JavaScript's Map has in-built properties and methods that make it easy to use. Here are some of the common ones:
 
 * Use the size property to know how many elements are in a Map:
+```javascript
+const map1 = new Map();
+
+map1.set('a', 'alpha');
+map1.set('b', 'beta');
+map1.set('g', 'gamma');
+
+
+console.log(map1.size);
+// Expected output: 3
+
+```
 * Search an element with the has(key) method:
 * Remove an element with the delete(key) method:
 * Use the clear() method to remove all the elements from the Map at once:
