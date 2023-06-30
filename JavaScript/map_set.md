@@ -197,6 +197,7 @@ map.set("tea", 300);
 map.set('coffee', 500);
 
 console.log(Array.from(map));
+//[ [ 'milk', 200 ], [ 'tea', 300 ], [ 'coffee', 500 ] ]
 ```
 
 ```javascript
