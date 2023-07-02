@@ -53,54 +53,6 @@ The error object has two main properties:
 **Message**:- Whereas error message gives or describes the error message in string form in JavaScript.
 Although the error is a generic constructor as it gives basic information about the condition, on the other hand, various standard built-in error types or error constructors are the foundation of exception handling in javascript as they provide detailed information about the problem.
 
-### Standard Built-in Error Types or Error Constructors
-These are the built-in standard error types or error constructors, and they are helpful for exception handling in javascript.
-
-Let's discuss each of them in more detail:-
-
- **1. EvalError:-** 
- This type of error occurs in the eval() function and indicates an issue with its arguments. Additionally, the eval() function is the global function that takes a string with javascript code and evaluates it for you.
-
-Additionally, EvalError is not used within the current ECMAScript specification. However, the object itself remains for backward compatibility with earlier versions of the specification.
-
-```javascript
-try {
-  throw new EvalError('Hello', 10);
-} 
-
-```
-You must avoid using the eval() function because it costs security and performance issues.
- **2. ReferenceError:-** 
- ReferenceError occurs when the code uses undeclared variables.
-
-Whenever the code tries to access undeclared variables, the error occurs as a reference error.
-```javascript
-var number = 10;
-console.log(count);
-// ReferenceError: count is not defined
-
-```
-**4. RangeError:-** 
- This type of error occurs when a numeric value is out of a valid range.
-```javascript
-const arr = [1,2]
-arr.length=99**200
-// RangeError: Invalid array length
-```
-**5. SyntaxError:-** 
-This error occurs when the programmer misuses the syntax or breaks the javascript rule.
-```javascript
-const ar r = [1,2]
-SyntaxError: Missing initializer in const declaration
-
-```
-**6. TypeError:-** 
-It occurs when the given value is unexpected or you are trying to operate on the wrong data type.
-```javascript
-const number = 3
-number.toUpperCase()
-// TypeError: number.toUpperCase is not a function
-```
 
 ### Exception Handling Statements
 An exception is an abnormal or unexpected condition that occurs during the runtime, and javascript provides various statements or a combination of statements to handle the exceptions.
