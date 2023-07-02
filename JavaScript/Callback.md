@@ -169,3 +169,46 @@ asyncFunction(function(){
 });
 
 ```
+### How can you handle errors with callbacks?
+* **Error-First Callbacks**
+* **Try-Catch Block**
+
+1. **Error-First Callbacks**
+   In this pattern, the callback function's first parameter is reserved for the error object, while subsequent parameters hold the desired results. Inside the callback, you can check if an error occurred and handle it accordingly.
+```javascript
+function fetchData(callback) {
+  // Simulated asynchronous operation
+  setTimeout(function() {
+    if (/* an error occurred */) {
+      callback(new Error("Error message"));
+    } else {
+      const data = /* data retrieval */;
+      callback(null, data);
+    }
+  }, 2000);
+}
+
+function callbackFunction(err, data) {
+  if (err) {
+    console.error("An error occurred:", err);
+    // Handle the error
+  } else {
+    // Process the data
+  }
+}
+
+fetchData(callbackFunction);
+
+```
+2. **Try-Catch Block:**
+
+    If the callback is synchronous, you can wrap the callback invocation in a try-catch block to catch any errors thrown within the callback function.
+```javascript
+try {
+  callbackFunction();
+} catch (error) {
+  console.error("An error occurred:", error);
+  // Handle the error
+}
+
+```
