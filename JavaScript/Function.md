@@ -43,11 +43,15 @@ var result = add(10, 20);//returns 30
 ### Anonymous Function
 In JavaScript, you can also create anonymous functions, which are functions without a name. Anonymous functions are often used as arguments to other functions, and are
 ```javascript
-let numbers = [10, 20, 30, 40, 50];
+// A regular named function
+function greet(name) {
+    console.log("Hello, " + name + "!");
+}
 
-let squareNumbers = numbers.map(function(number) {
-  return number * number;
-})
+// Using an anonymous function
+var greetAnonymous = function(name) {
+    console.log("Hello, " + name + "!");
+};
 ```
 ### Arrow Functions
 ```javascript
