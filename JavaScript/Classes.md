@@ -22,3 +22,61 @@ console.log(bike2.maker); // Kawasaki
 console.log(bike1.getDetails());
 
 ```
+## Inheritance in JS Class
+```javascript
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(`${this.name} makes a sound.`);
+  }
+}
+
+class Dog extends Animal {
+  constructor(name, breed) {
+    super(name);
+    this.breed = breed;
+  }
+
+  speak() {
+    console.log(`${this.name} barks.`);
+  }
+}
+
+const dog = new Dog("Buddy", "Golden Retriever");
+dog.speak(); // Output: "Buddy barks."
+
+```
+
+## Method overriding in JS
+```javascript
+class Shape {
+  constructor() {
+    this.name = "Shape";
+  }
+
+  draw() {
+    console.log(`Drawing a ${this.name}`);
+  }
+}
+
+class Circle extends Shape {
+  constructor() {
+    super();
+    this.name = "Circle";
+  }
+
+  draw() {
+    console.log(`Drawing a ${this.name} with a specific radius.`);
+  }
+}
+
+const shape = new Shape();
+shape.draw(); // Output: "Drawing a Shape"
+
+const circle = new Circle();
+circle.draw(); // Output: "Drawing a Circle with a specific radius."
+
+```
