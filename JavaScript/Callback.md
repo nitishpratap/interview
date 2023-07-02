@@ -25,25 +25,18 @@ _"The synchronous callback is executed during the execution of the higher-order 
 In other words, the synchronous callbacks are blocking: the higher-order function doesn't complete its execution until the callback is done executing.
 
 ```javascript
-function map(array, callback) {
-  console.log('map() starts');
-  const mappedArray = [];
-  for (const item of array) { mappedArray.push(callback(item)) }
-  console.log('map() completed');
-  return mappedArray;
+function calculateSquare(number, callback) {
+    const square = number * number;
+    callback(square);
 }
 
-function greet(name) {
-  console.log('greet() called');
-  return `Hello, ${name}!`;
+function displayResult(result) {
+    console.log("The result is: " + result);
 }
 
-const persons = ['Cristina'];
+calculateSquare(5, displayResult);
+console.log("End of script");
 
-map(persons, greet);
-// logs 'map() starts'
-// logs 'greet() called'
-// logs 'map() completed'
 ```
 ## Asynchronous callbacks
 An asynchronous callback is executed after the execution of the high-order function that uses the callback.
