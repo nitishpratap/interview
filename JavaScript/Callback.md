@@ -149,7 +149,12 @@ download(url1, function (url) {
 ```
 
 **Nesting many asynchronous functions inside callbacks is known as the pyramid of doom or the callback hell:**
-
+Callback hell refers to a situation in asynchronous programming where multiple nested callbacks make the code difficult to read, understand, and maintain. It often occurs when handling complex or dependent asynchronous tasks that require sequential execution.
+#### To remove the callback hell use 
+* **Modularization** ->  Break down the code into smaller, modular functions.
+* **Promises:**
+* **Async/Await:**
+* **Named Functions:** ->  Instead of using anonymous functions as callbacks, define named functions separately. This makes the code more readable and allows for better reusability.
 ```javascript
 asyncFunction(function(){
     asyncFunction(function(){
