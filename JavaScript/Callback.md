@@ -1,7 +1,7 @@
 # What are callbacks
-a callback is a function that is passed as an argument to another function and is invoked (called) by that function at a specific time or in response to a certain event. The purpose of a callback is to allow the calling function to execute custom code or behavior, defined by the callback function, at a designated point in its execution.
+a callback is a function that is passed as an argument to another function and is invoked (called) by that function at a specific time or in response to a certain event. 
 
-Callbacks are commonly used in scenarios where the order of execution is not linear or predictable, such as asynchronous operations, event handling, or when working with APIs that require waiting for a response. By passing a callback function, the caller can specify what action should be taken when a certain task or event is completed.
+Callbacks are commonly used in scenarios where the order of execution is not linear or predictable, such as asynchronous operations, event handling, or when working with APIs that require waiting for a response.
 The following defines a filter() function that accepts an array of numbers and returns a new array of odd numbers:
 ```javascript
 function isOdd(number) {
