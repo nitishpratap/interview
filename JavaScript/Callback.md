@@ -23,8 +23,8 @@ console.log(filter(numbers, isOdd));
 **There are two types of callbacks: synchronous and asynchronous callbacks.**
 
 ## Synchronous callbacks
-_"The synchronous callback is executed during the execution of the higher-order function that uses the callback."_
-In other words, the synchronous callbacks are blocking: the higher-order function doesn't complete its execution until the callback is done executing.
+Synchronous callbacks refer to a type of callback function that is executed immediately within the same execution context or thread of the calling function. In other words, the execution of the callback blocks the further execution of the program until the callback function has completed its execution.
+
 
 ```javascript
 function calculateSquare(number, callback) {
