@@ -36,6 +36,8 @@ function displayResult(result) {
 
 calculateSquare(5, displayResult);
 console.log("End of script");
+//The result is: 25
+//End of script
 
 ```
 ## Asynchronous callbacks
