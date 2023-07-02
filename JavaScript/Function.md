@@ -73,6 +73,104 @@ const difference = (a, b) => a - b;
 console.log(applyOperation(5, 3, sum)); // 8
 console.log(applyOperation(5, 3, difference)); // 2
 ```
+
+### Map() in js
+The syntax of the map() method is:
+```javascript
+arr.map(callback(currentValue), thisArg)
+```
+#### map() Parameters
+The map() method takes in:
+
+1. **callback** - The function called for every array element. Its return values are added to the new array. It takes in: <br/>
+   * **currentValue** - The current element being passed from the array.
+   * **thisArg (optional)** - Value to use as this when executing callback. By default, it is undefined.
+
+#### map() Return Value
+Returns a new array with elements as the return values from the callback function for each element.
+#### Notes:
+
+* map() does not change the original array.
+* map() executes callback once for each array element in order.
+* map() does not execute callback for array elements without values.
+
+```javascript
+// An array of numbers
+var numbers = [1, 2, 3, 4, 5];
+
+// Doubling each number using map()
+var doubledNumbers = numbers.map(function(num) {
+  return num * 2;
+});
+
+console.log(doubledNumbers);
+// Output: [2, 4, 6, 8, 10]
+
+```
+
+### Filter() in js
+The filter() method returns a new array with all elements that pass the test defined by the given function.
+#### filter() Syntax
+```javascript
+arr.filter(callback(element), thisArg)
+```
+#### filter() Parameters
+The filter() method takes in:<br/>
+1. **callback** - The test function to execute on each array element; returns true if element passes the test, else false. It takes in: <br/>
+2. **element** - The current element being passed from the array.
+3. **thisArg (optional)** - The value to use as this when executing callback. By default, it is undefined.
+
+#### filter() Return Value
+Returns a new array with only the elements that passed the test.
+```javascript
+// An array of numbers
+var numbers = [1, 2, 3, 4, 5];
+
+// Filtering even numbers using filter()
+var evenNumbers = numbers.filter(function(num) {
+  return num % 2 === 0;
+});
+
+console.log(evenNumbers);
+// Output: [2, 4]
+
+```
+
+### reduce() in js
+The reduce() method executes a reducer function on each element of the array and returns a single output value.
+#### reduce() Syntax
+```javascript
+arr.reduce(callback(accumulator, currentValue), initialValue)
+```
+#### reduce() Parameters
+The reduce() method takes in:<br/>
+1. **callback -** The function to execute on each array element (except the first element if no initialValue is provided). It takes in <br/>
+2. **accumulator -** It accumulates the callback's return values.<br/>
+3. **currentValue -** The current element being passed from the array.<br/>
+4. **initialValue (optional)** - A value that will be passed to callback() on first call. If not provided, the first element acts as the accumulator on the first call and callback() won't execute on it.<br/>
+**Note:** `Calling reduce() on an empty array without initialValue will throw TypeError.`
+
+#### reduce() Return Value
+Returns the single value resulting after reducing the array.
+
+**Notes:**
+
+* reduce() executes the given function for each value from left to right.
+* reduce() does not change the original array.
+* It is almost always safer to provide initialValue.
+```javascript
+// An array of numbers
+var numbers = [1, 2, 3, 4, 5];
+
+// Summing all numbers using reduce()
+var sum = numbers.reduce(function(acc, num) {
+  return acc + num;
+}, 0);
+
+console.log(sum);
+// Output: 15
+
+```
 ### immediately Invoked Function
 It is a JavaScript function that is executed as soon as it is defined. It is commonly used to create a separate scope for variables and to avoid polluting the global scope.
 ```javascript
