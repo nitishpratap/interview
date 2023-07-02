@@ -23,6 +23,8 @@ console.log(filter(numbers, isOdd));
 **There are two types of callbacks: synchronous and asynchronous callbacks.**
 
 ## Synchronous callbacks
+Synchronous callbacks executed during the exrcution of the higher order function that takes the callback.
+
 Synchronous callbacks refer to a type of callback function that is executed immediately within the same execution context or thread of the calling function. In other words, the execution of the callback blocks the further execution of the program until the callback function has completed its execution.
 
 
