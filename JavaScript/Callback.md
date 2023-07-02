@@ -43,7 +43,7 @@ console.log("End of script");
 
 ```
 ## Asynchronous callbacks
-Asynchronous callbacks refer to a type of callback function that is executed at a later time or in a separate execution context, allowing the program to continue its execution without waiting for the callback to complete. It enables non-blocking behavior and is commonly used in scenarios where tasks take longer to complete or involve I/O operations.
+Asynchronous callbacks refer to a type of callback function that  allow the program to continue its execution without waiting for the callback to complete. It enables non-blocking behavior and is commonly used in scenarios where tasks take longer to complete or involve I/O operations.
 Asynchronicity means that if JavaScript has to wait for an operation to complete, it will execute the rest of the code while waiting.
 Note that JavaScript is a single-threaded programming language. It carries asynchronous operations via the callback queue and event loop.
 
