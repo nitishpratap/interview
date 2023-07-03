@@ -285,6 +285,58 @@ for (const key in a) {
 }
 ```
 Note we need to do a[key] to access value if i write a.key then it will `undefined`
+
+## How to Get the Length of an Object in JavaScript?
+```javascript
+Object.keys(exampleObject).length
+```
+
+```javascript
+var obj = {
+  Name: "Muthu",
+  PhoneNo: "8794561234",
+  age: 15 
+};
+// Here we are getting the object length
+var length = Object.keys(obj).length;
+console.log(length);  // 3
+```
+
+or
+```javascript
+Object.values(obj).length
+```
+
+```javascript
+// A Sample object is created here
+var obj = {
+    Name: "Rakesh",
+    PhoneNo: 7546899871,
+    age: 18
+};
+// Here we are getting the object length
+var length = Object.values(obj).length;
+console.log(length); // 3
+```
+
+or 
+```javascript
+Object.entries(obj).length
+```
+```javascript
+// A Sample object is created here
+var obj = {
+    Name: "Nanda",
+    PhoneNo: 9876541237,
+    age: 18 
+};
+// Here we are Getting the object length
+var length = Object.values(obj).length;
+console.log(length);
+
+```
+
+
 ## Shallow Copy and Deep Copy in JavaScript
 
 In JavaScript, there are two ways to copy objects: shallow copy and deep copy.
