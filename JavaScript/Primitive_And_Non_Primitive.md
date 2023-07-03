@@ -149,54 +149,54 @@ In JavaScript, arrays use numbered indexes and objects use named indexes.
 
 ## JavaScript Array Methods
 1. map( )
-   This method creates a new array with the results of calling a provided function on every element in this array.
+   This method creates a new array with the results of calling a provided function on every element in this array.<br/>
     <img src="../images/map_primitive.webp" width = "50%" height = 50%>
 
 2. filter( )
-   This method creates a new array with only elements that passes the condition inside the provided function.
+   This method creates a new array with only elements that passes the condition inside the provided function.<br/>
    <img src="../images/filter_primitive.webp" width = "50%" height = 50%>
 
 3. sort( )
-   This method is used to arrange/sort array’s elements either in ascending or descending order.
+   This method is used to arrange/sort array’s elements either in ascending or descending order.<br/>
    <img src="../images/sort_primitive.webp" width = "50%" height = 50%>
 
 4. forEach( )
-   This method helps to loop over array by executing a provided callback function for each element in an array.
+   This method helps to loop over array by executing a provided callback function for each element in an array.<br/>
    <img src="../images/foreach_primitive'.webp" width = "50%" height = 50%>
 5. concat( )
-   This method is used to merge two or more arrays and returns a new array, without changing the existing arrays.
+   This method is used to merge two or more arrays and returns a new array, without changing the existing arrays.<br/>
    <img src="../images/concat_primitive.webp" width = "50%" height = 50%>
 
 6. every( )
-   This method checks every element in the array that passes the condition, returning true or false as appropriate.
+   This method checks every element in the array that passes the condition, returning true or false as appropriate.<br/>
    <img src="../images/every_primitive.webp" width = "50%" height = 50%>
 
 7. some( )
-   This method checks if at least one element in the array that passes the condition, returning true or false as appropriate.
+   This method checks if at least one element in the array that passes the condition, returning true or false as appropriate.<br/>
    <img src="../images/sort_primitive.webp" width = "50%" height = 50%>
 
 8. includes( )
-   This method checks if an array includes the element that passes the condition, returning true or false as appropriate.
+   This method checks if an array includes the element that passes the condition, returning true or false as appropriate.<br/>
    <img src="../images/include_primitive.webp" width = "50%" height = 50%>
 
 9. join( )
-   This method returns a new string by concatenating all of the array’s elements separated by the specified separator.
+   This method returns a new string by concatenating all of the array’s elements separated by the specified separator.<br/>
    <img src="../images/join_primitive.webp" width = "50%" height = 50%>
 
 10. reduce( )
-    This method applies a function against an accumulator and each element in the array to reduce it to a single value.
+    This method applies a function against an accumulator and each element in the array to reduce it to a single value.<br/>
     <img src="../images/reduce_primitive.webp" width = "50%" height = 50%>
 
 11. find( )
-    This method returns the value of the first element in an array that pass the test in a testing function.
+    This method returns the value of the first element in an array that pass the test in a testing function.<br/>
     <img src="../images/find_primitive.webp" width = "50%" height = 50%>
 
 12. findIndex( )
-    This method returns the index of the first element in an array that pass the test in a testing function.
+    This method returns the index of the first element in an array that pass the test in a testing function.<br/>
     <img src="../images/findIndex.webp" width = "50%" height = 50%>
 
 13. indexOf( )
-    This method returns the index of the first occurrence of the specified element in the array, or -1 if it is not found.
+    This method returns the index of the first occurrence of the specified element in the array, or -1 if it is not found.<br/>
     <img src="../images/indexOf_primitive.webp" width = "50%" height = 50%>
 
 14. slice( )
