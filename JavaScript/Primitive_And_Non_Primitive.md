@@ -201,7 +201,7 @@ In JavaScript, arrays use numbered indexes and objects use named indexes.
 
 14. slice( )
     This method returns a new array with specified start to end elements.<br/>
-  <img src="../images/slice_primitive.webp" width = "50%" height = 50%>
+    <img src="../images/slice_primitive.webp" width = "50%" height = 50%>
 
 15. reverse( )
     This method reverses an array in place. Element at last index will be first and element at 0 index will be last.
@@ -209,7 +209,7 @@ In JavaScript, arrays use numbered indexes and objects use named indexes.
 
 16. push( )
     This method adds one or more elements to the end of array and returns the new length of the array.
-  <img src="../images/push_primitive.webp" width = "50%" height = 50%>
+    <img src="../images/push_primitive.webp" width = "50%" height = 50%>
 
 17. pop( )
     This method removes the last element from the end of array and returns that element.
