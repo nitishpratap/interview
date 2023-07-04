@@ -27,3 +27,12 @@ console.log('This message is shown first');
 //Hello world
 ```
 
+## Question: Can you explain the setTimeout() function and how it is used in JavaScript?
+The setTimeout() function is a built-in JavaScript function that allows you to schedule the execution of a function after a specified delay, measured in milliseconds. It takes two parameters: a callback function and a delay value.
+```javascript
+setTimeout(callback, delay);
+```
+* callback: A function to be executed after the delay has elapsed.<br/>
+* delay: The delay, in milliseconds, before the callback function is invoked.
+
+
