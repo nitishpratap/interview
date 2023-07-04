@@ -35,4 +35,11 @@ setTimeout(callback, delay);
 * callback: A function to be executed after the delay has elapsed.<br/>
 * delay: The delay, in milliseconds, before the callback function is invoked.
 
+```javascript
+function sayHello() {
+  console.log("Hello, world!");
+}
 
+setTimeout(sayHello, 2000); // Executes sayHello() after a 2-second delay
+
+```
