@@ -51,3 +51,115 @@ person1.greet(); // Output: Hello, Alice!
 person1.greet.call(person2); // Output: Hello, Bob!
 
 ```
+
+# bind()
+
+The bind() method in JavaScript is used to create a new function with a specified this value and an optional set of arguments. When you call bind() on a function, it returns a new function that, when executed, has its this keyword set to the provided value, and any arguments passed to bind() are prepended to the arguments provided to the bound function when it is called.
+
+```javascript
+function.bind(thisArg[, arg1[, arg2[, ...]]])
+```
+* thisArg: The value to be passed as the this parameter to the function when the bound function is called.<br/>
+* arg1, arg2, ...: Optional arguments that are prepended to the arguments passed to the bound function when it is invoked.
+
+```javascript
+const person = {
+  name: 'John',
+  greet: function(message) {
+    console.log(`${message}, ${this.name}!`);
+  }
+};
+
+const greetFunction = person.greet.bind(person, 'Hello');
+greetFunction(); // Output: Hello, John!
+
+```
+
+# apply()
+The apply in Javascript is used to call a function in a different object with the given this value, and the arguments are passed in the form of an array. This method allows us to write methods that can be used on different objects and hence increase the reusability of code.
+
+## What is apply() in Javascript?
+The apply in Javascript is used when we need to call a method on object x with a different object y.
+
+```javascript
+const car = {
+    'name': 'Altos',
+    'speed': '120 KMPH',
+    'drive': function() { 
+        console.log(this.name + ' runs at ' + this.speed); 
+    }
+}
+
+car.drive();
+
+const bike = {
+    'name': 'Jawa',
+    'speed': '100 KMPH',
+    'drive': function() { 
+        console.log(this.name + ' runs at ' + this.speed); 
+    }
+}
+Altos runs at 120 KMPH
+Jawa runs at 100 KMPH
+
+```
+
+## Syntax of apply() in Javascript
+The apply in Javascript accepts two arguments, the this value (object on which the function is to be called) and the list of the arguments (optional) that will be passed to the method it calls (fn).
+```javascript
+fn.apply(thisArg)
+fn.apply(thisArg, argumentsList)
+
+```
+```javascript
+function intro(message) {
+    console.log(message + ' ' + this.firstname + ' ' + this.lastname);
+}
+
+const student1 = {
+    'firstname': 'Tony',
+    'lastname': 'Stark'
+};
+
+const student2 = {
+    'firstname': 'Steve',
+    'lastname': 'Rogers'
+}
+
+intro.apply(student1, ['Hello! I am']);
+intro.apply(student2, ['Hi! I am']);
+
+Hello! I am Tony Stark
+Hi! I am Steve Rogers
+
+```
+
+```javascript
+const mobile = {
+    'ram': '8 GB',
+    'storage': '256 GB',
+    'display': 'IPS',
+    'model': 'Pixel 3',
+    'specs': function() {
+        console.log('Model: ' + this.model + '\n'
+                   + 'RAM: ' + this.ram + '\n'
+                   + 'Storage: ' + this.storage + '\n'
+                   + 'Display: ' + this.display + '\n');
+    }
+}
+
+const laptop = {
+    'ram': '16 GB',
+    'storage': '512 GB',
+    'display': 'Retina',
+    'model': 'Macbook Pro'
+}
+
+mobile.specs.apply(laptop);
+
+Model: Macbook Pro
+RAM: 16 GB
+Storage: 512 GB
+Display: Retina
+
+```
