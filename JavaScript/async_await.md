@@ -3,7 +3,7 @@ To avoid this callback hell issue, ES6 introduced the promises that allow you to
 
 First, you need to return a Promise in each function:
 
-ES2017 introduced the async/await keywords that build on top of promises, allowing you to write asynchronous code that looks more like synchronous code and is more readable. Technically speaking, the async / await is syntactic sugar for promises.
+The async/await keywords that build on top of promises, allowing you to write asynchronous code that looks more like synchronous code and is more readable. Technically speaking, the async / await is syntactic sugar for promises.
 
 If a function returns a Promise, you can place the await keyword in front of the function call, like this:
 
