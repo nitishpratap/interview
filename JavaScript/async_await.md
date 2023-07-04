@@ -89,3 +89,8 @@ async function getUser(userId) {
     }
 }
 ```
+
+## What is async/await in JavaScript, and how does it work?
+ES2017 introduced the async/await keywords that build on top of promises, allowing you to write asynchronous code that looks more like synchronous code and is more readable. Technically speaking, the async / await is syntactic sugar for promises.
+
+The async keyword is used to define an asynchronous function, which always returns a promise. Within an async function, you can use the await keyword to pause the execution and wait for a promise to resolve or reject before proceeding to the next line.
