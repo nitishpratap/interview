@@ -311,3 +311,46 @@ Output:
 
     Set(4) {"🍉", "🍎", "🍈", "🍏"}
 ```
+
+
+
+## What is the Map data structure in JavaScript, and how is it different from plain JavaScript objects?
+Map is a collection of key-value pairs where the key can be of any type. Map remembers the original order in which the elements were added to it, which means data can be retrieved in the same order it was inserted in. Map has characteristics of both Object and Array.<br/>
+In a Map, the keys can be of any data type (including objects or functions), and the original order of insertion is preserved. Additionally, Map provides built-in methods for common operations such as adding and deleting entries, iterating over the keys or values, and checking for the presence of a key.
+
+## How do you create a Map in JavaScript?
+```javascript
+const map = new Map();
+
+```
+## How do you add entries to a Map?
+To add entries to a Map, you can use the set() method. It takes two arguments: the key and the corresponding value.
+```javascript
+map.set(key, value);
+```
+
+##  How do you retrieve values from a Map?
+To retrieve values from a Map, you can use the get() method and pass the desired key as an argument. It returns the corresponding value if the key is found, and undefined otherwise.
+```javascript
+    const value = map.get(key);
+```
+
+## What is the Set data structure in JavaScript, and how is it different from an array?
+The Set is a built-in data structure introduced in ECMAScript 2015 (ES6) that allows you to store unique values of any data type. It is similar to an array, but unlike arrays, Set does not allow duplicate values. It provides methods for adding, deleting, and checking the presence of values, and it maintains the insertion order of elements.
+
+## How do you create a Set in JavaScript?
+```javascript
+const set = new Set();
+```
+
+##  How do you add values to a Set?
+To add values to a Set, you can use the add() method. It takes one argument, which is the value to be added.
+```javascript
+set.add(value);
+```
+
+##  How do you remove values from a Set?
+```javascript
+const deleted = set.delete(value);
+
+```
