@@ -94,3 +94,23 @@ async function getUser(userId) {
 The async/await keywords that build on top of promises, allowing you to write asynchronous code that looks more like synchronous code and is more readable. Technically speaking, the async / await is syntactic sugar for promises.
 
 The async keyword is used to define an asynchronous function, which always returns a promise. Within an async function, you can use the await keyword to pause the execution and wait for a promise to resolve or reject before proceeding to the next line.
+
+## how to apply asyc await on promiss chain with arrow function.
+examples
+```javascript
+const exampleFunction = async () => {
+  try {
+    const result1 = await promiseFunction1();
+    const result2 = await promiseFunction2(result1);
+    const result3 = await promiseFunction3(result2);
+    // ... continue with more async operations
+
+    return finalResult;
+  } catch (error) {
+    // Handle any errors that occur in the try block
+    console.error(error);
+    throw error; // Optional: rethrow the error to be caught by the caller
+  }
+};
+
+```
