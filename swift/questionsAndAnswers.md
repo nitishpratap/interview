@@ -3,7 +3,7 @@ hello questions
 * delegates
 * collections
 * defer
-* enam
+* enum
 * Self and self
 * Dynamic dispatch
 * method swizzing in ios
