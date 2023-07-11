@@ -1228,10 +1228,84 @@ ampleBuffer, from connection: AVCaptureConnection) {
     }
 }
 ```
-AVFoundation provides extensive functionality for working with audiovisual media in iOS and macOS applications. The framework offers a rich set of APIs for playback, capture, editing, and export of media assets. By leveraging AVFoundation, developers can create engaging multimedia experiences in their apps.
-User
+
+```javascript
+import UIKit
+import AVFoundation
+
+class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
+    
+    var captureSession: AVCaptureSession!
+    var videoPreviewLayer: AVCaptureVideoPreviewLayer!
+    var photoOutput: AVCapturePhotoOutput!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupCaptureSession()
+        setupPreviewLayer()
+        startCaptureSession()
+    }
+    
+    func setupCaptureSession() {
+        captureSession = AVCaptureSession()
+        
+        // Configure input
+        guard let captureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) else {
+            print("Failed to get camera device")
+            return
+        }
+        
+        do {
+            let captureInput = try AVCaptureDeviceInput(device: captureDevice)
+            captureSession.addInput(captureInput)
+        } catch {
+            print("Error setting device input: \(error.localizedDescription)")
+            return
+        }
+        
+        // Configure output
+        photoOutput = AVCapturePhotoOutput()
+        captureSession.addOutput(photoOutput)
+    }
+    
+    func setupPreviewLayer() {
+        videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        videoPreviewLayer.videoGravity = .resizeAspectFill
+        videoPreviewLayer.frame = view.layer.bounds
+        view.layer.addSublayer(videoPreviewLayer)
+    }
+    
+    func startCaptureSession() {
+        captureSession.startRunning()
+    }
+    
+    func stopCaptureSession() {
+        captureSession.stopRunning()
+    }
+    
+    func captureImage() {
+        let settings = AVCapturePhotoSettings()
+        photoOutput.capturePhoto(with: settings, delegate: self)
+    }
+    
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        guard let imageData = photo.fileDataRepresentation(),
+              let image = UIImage(data: imageData) else {
+            print("Failed to capture photo")
+            return
+        }
+        
+        // Use the captured image
+        // Example: display the image in an image view
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+        imageView.image = image
+        view.addSubview(imageView)
+    }
+}
+
+```
+AVFoundation provides extensive functionality for working with audiovisual media in iOS and macOS applications. The framework offers a rich set of APIs for playback, capture, editing, and export of media assets. By leveraging AVFoundation, developers can create engaging multimedia experiences in their apps.<br/>
 interview questions on avfoundation
-ChatGPT
 Certainly! Here are some common interview questions related to AVFoundation:
 
 ## Question 1: What is AVFoundation in iOS?
