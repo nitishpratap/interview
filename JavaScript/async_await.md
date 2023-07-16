@@ -96,7 +96,7 @@ The async/await keywords that build on top of promises, allowing you to write as
 The async keyword is used to define an asynchronous function, which always returns a promise. Within an async function, you can use the await keyword to pause the execution and wait for a promise to resolve or reject before proceeding to the next line.
 
 ## how to apply asyc await on promiss chain with arrow function.
-examples 
+examples
 ```javascript
 const exampleFunction = async () => {
   try {
