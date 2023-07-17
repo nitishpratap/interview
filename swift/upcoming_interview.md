@@ -270,10 +270,8 @@ These control transfer statements provide flexibility and control over the execu
 Please note that the cloud platform landscape is continually evolving, and new services and features are frequently introduced. It's essential to refer to the official documentation and resources of specific cloud platforms for up-to-date information and detailed instructions.
 
 Feel free to customize and enhance this documentation according to your requirements and interview context. Good luck with your interview!
-User
-Sorting of Array compelete doc in swift
-ChatGPT
-Sure! Here's a comprehensive documentation on sorting arrays in Swift:
+
+## Sorting of Array compelete doc in swift
 
 1. Introduction to Array Sorting:
    Sorting is the process of arranging elements in a specific order. In Swift, arrays are one of the fundamental data structures used to store collections of values. Swift provides various methods and functions to sort arrays efficiently based on different sorting criteria.
