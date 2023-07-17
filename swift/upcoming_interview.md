@@ -116,7 +116,8 @@ After the swap, the values of a and b are 20 and 10, respectively, as printed in
 
 Remember to adapt and personalize this documentation based on your own understanding and experience with SaaS. Good luck with your interview!
 
-## Control transfer statements in Swift allow you to change the flow of execution in your code. They provide various ways to transfer control from one part of your code to another, based on certain conditions or requirements. Here are the control transfer statements in Swift:
+## Control transfer statements <br/>
+in Swift allow you to change the flow of execution in your code. They provide various ways to transfer control from one part of your code to another, based on certain conditions or requirements. Here are the control transfer statements in Swift:
 
 1. `break`:
    The `break` statement is commonly used within loops (such as `for` or `while` loops) or `switch` statements to terminate the loop or switch block prematurely. When encountered, it immediately exits the loop or switch block and continues executing the code after the loop or switch.
@@ -649,10 +650,10 @@ In this example, the `fetchPage()` function makes an API call to retrieve the da
 Note: This example assumes a simple array of strings as the data source. You may need to adapt the code to your specific data model or API response structure.
 
 Remember to customize the implementation based on your specific requirements and data source. Pagination can vary depending on the API or data source you are working with.
-User
-delegates in swift
-ChatGPT
-## Delegates in Swift are a design pattern that allows one object to communicate and pass information to another object. Delegation is commonly used to establish a one-to-one communication pattern between objects and helps achieve loose coupling and modular design. Here's how delegates work in Swift:
+
+## delegates in swift
+
+ Delegates in Swift are a design pattern that allows one object to communicate and pass information to another object. Delegation is commonly used to establish a one-to-one communication pattern between objects and helps achieve loose coupling and modular design. Here's how delegates work in Swift:
 
 1. Protocol Definition:
 - Define a protocol that outlines the methods or properties that the delegate object should implement. This protocol acts as a contract specifying the responsibilities of the delegate.
