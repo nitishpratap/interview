@@ -75,20 +75,3 @@ Pure Components have a few limitations to consider:
 
 3. **Function Props:** If your component receives function props, the references to these functions may change on every render, which could lead to unnecessary re-renders of the Pure Component.
 
-### CodeSandbox Example
-
-Here's a live example of the code in action using CodeSandbox:
-
-<p align="center">
-  <iframe
-    src="https://codesandbox.io/embed/pbzpq8?file=/App.js&utm_medium=sandpack"
-    style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-    title="CodeSandbox Example"
-    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-  ></iframe>
-</p>
-
-### Output Screenshots
-
-![Output Screenshot 1](path/to/screenshot1.png)
-![Output Screenshot 2](path/to/screenshot2.png)
