@@ -18,26 +18,26 @@ Event capturing is the opposite phase of event propagation, which is less common
 React follows the event bubbling phase by default. When you handle an event in a React component, if the event is not explicitly stopped with stopPropagation(), it will propagate up the component tree. This means that parent components have the opportunity to handle the event after it has been processed by the target element and its immediate ancestors.
 
 ```javascript
-import React from 'react';
+import React from 'React/States_Hooks';
 
 const ParentComponent = () => {
-  const handleParentClick = () => {
-    console.log('Parent component clicked.');
-  };
+    const handleParentClick = () => {
+        console.log('Parent component clicked.');
+    };
 
-  return (
-    <div onClick={handleParentClick}>
-      <ChildComponent />
-    </div>
-  );
+    return (
+        <div onClick={handleParentClick}>
+            <ChildComponent/>
+        </div>
+    );
 };
 
 const ChildComponent = () => {
-  const handleChildClick = () => {
-    console.log('Child component clicked.');
-  };
+    const handleChildClick = () => {
+        console.log('Child component clicked.');
+    };
 
-  return <button onClick={handleChildClick}>Click Me</button>;
+    return <button onClick={handleChildClick}>Click Me</button>;
 };
 
 export default ParentComponent;
@@ -49,17 +49,16 @@ In this example, when the button in the ChildComponent is clicked, both the hand
 ## Controlling Event Propagation with stopPropagation()
 If you want to prevent an event from propagating further up the DOM tree, you can use the stopPropagation() method available on the event object:
 
-
 ```javascript
-import React from 'react';
+import React from 'React/States_Hooks';
 
 const ChildComponent = () => {
-  const handleChildClick = (e) => {
-    e.stopPropagation();
-    console.log('Child component clicked.');
-  };
+    const handleChildClick = (e) => {
+        e.stopPropagation();
+        console.log('Child component clicked.');
+    };
 
-  return <button onClick={handleChildClick}>Click Me</button>;
+    return <button onClick={handleChildClick}>Click Me</button>;
 };
 
 ```
@@ -70,28 +69,27 @@ In this updated example, when the button in the ChildComponent is clicked, only 
 
 While React primarily follows the event bubbling phase, it does support event capturing by using the useCapture option in event listeners:
 
-
 ```javascript
-import React from 'react';
+import React from 'React/States_Hooks';
 
 const ParentComponent = () => {
-  const handleParentClick = () => {
-    console.log('Parent component clicked.');
-  };
+    const handleParentClick = () => {
+        console.log('Parent component clicked.');
+    };
 
-  return (
-    <div onClick={handleParentClick}>
-      <ChildComponent />
-    </div>
-  );
+    return (
+        <div onClick={handleParentClick}>
+            <ChildComponent/>
+        </div>
+    );
 };
 
 const ChildComponent = () => {
-  const handleChildClick = () => {
-    console.log('Child component clicked.');
-  };
+    const handleChildClick = () => {
+        console.log('Child component clicked.');
+    };
 
-  return <button onClick={handleChildClick} capture>Click Me</button>;
+    return <button onClick={handleChildClick} capture>Click Me</button>;
 };
 
 export default ParentComponent;
@@ -101,27 +99,28 @@ In this example, when the button in the ChildComponent is clicked, the handleChi
 
 ## 4. Event Propagation in Nested Components
 React components form a tree-like structure, and event propagation occurs naturally within this component tree. When an event is triggered in a child component, it bubbles up through its parent components until it reaches the root component.
+
 ```jsx
-import React from 'react';
+import React from 'React/States_Hooks';
 
 const ParentComponent = () => {
-  const handleParentClick = () => {
-    console.log('Parent component clicked.');
-  };
+    const handleParentClick = () => {
+        console.log('Parent component clicked.');
+    };
 
-  return (
-    <div onClick={handleParentClick}>
-      <ChildComponent />
-    </div>
-  );
+    return (
+        <div onClick={handleParentClick}>
+            <ChildComponent/>
+        </div>
+    );
 };
 
 const ChildComponent = () => {
-  const handleChildClick = () => {
-    console.log('Child component clicked.');
-  };
+    const handleChildClick = () => {
+        console.log('Child component clicked.');
+    };
 
-  return <button onClick={handleChildClick}>Click Me</button>;
+    return <button onClick={handleChildClick}>Click Me</button>;
 };
 
 export default ParentComponent;

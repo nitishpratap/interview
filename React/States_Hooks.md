@@ -21,26 +21,26 @@ Using state in components is essential for creating dynamic and interactive user
 State is typically initialized in the constructor of a component using the `this.state` property. Alternatively, you can use React's state initializer syntax with the `useState` hook (available in functional components) to manage state.
 
 ```jsx
-import React, { Component } from 'react';
+import React, {Component} from 'React/States_Hooks';
 
 class MyComponent extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      counter: 0,
-      name: 'John Doe'
-    };
-  }
+   constructor(props) {
+      super(props);
+      this.state = {
+         counter: 0,
+         name: 'John Doe'
+      };
+   }
 
-  render() {
-    // Component rendering logic using state values
-    return (
-      <div>
-        <p>Counter: {this.state.counter}</p>
-        <p>Name: {this.state.name}</p>
-      </div>
-    );
-  }
+   render() {
+      // Component rendering logic using state values
+      return (
+              <div>
+                 <p>Counter: {this.state.counter}</p>
+                 <p>Name: {this.state.name}</p>
+              </div>
+      );
+   }
 }
 ```
 
@@ -49,28 +49,28 @@ class MyComponent extends Component {
 State should never be modified directly; instead, you should use the `setState()` method provided by React to update state values. `setState()` is used to inform React that the component's state has changed, triggering a re-render of the component with the updated state.
 
 ```jsx
-import React, { Component } from 'react';
+import React, {Component} from 'React/States_Hooks';
 
 class CounterComponent extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      counter: 0
-    };
-  }
+   constructor(props) {
+      super(props);
+      this.state = {
+         counter: 0
+      };
+   }
 
-  handleIncrement = () => {
-    this.setState((prevState) => ({ counter: prevState.counter + 1 }));
-  };
+   handleIncrement = () => {
+      this.setState((prevState) => ({counter: prevState.counter + 1}));
+   };
 
-  render() {
-    return (
-      <div>
-        <p>Counter: {this.state.counter}</p>
-        <button onClick={this.handleIncrement}>Increment</button>
-      </div>
-    );
-  }
+   render() {
+      return (
+              <div>
+                 <p>Counter: {this.state.counter}</p>
+                 <button onClick={this.handleIncrement}>Increment</button>
+              </div>
+      );
+   }
 }
 ```
 
@@ -79,33 +79,33 @@ class CounterComponent extends Component {
 The `setState()` method is asynchronous, meaning that React may batch multiple state updates for better performance. Due to this, you should not rely on the immediate updated state value after calling `setState()`. Instead, use the callback form of `setState()` to perform additional operations after the state has been updated.
 
 ```jsx
-import React, { Component } from 'react';
+import React, {Component} from 'React/States_Hooks';
 
 class MyComponent extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      counter: 0
-    };
-  }
+   constructor(props) {
+      super(props);
+      this.state = {
+         counter: 0
+      };
+   }
 
-  handleIncrement = () => {
-    this.setState(
-      (prevState) => ({ counter: prevState.counter + 1 }),
-      () => {
-        console.log('Counter updated:', this.state.counter);
-      }
-    );
-  };
+   handleIncrement = () => {
+      this.setState(
+              (prevState) => ({counter: prevState.counter + 1}),
+              () => {
+                 console.log('Counter updated:', this.state.counter);
+              }
+      );
+   };
 
-  render() {
-    return (
-      <div>
-        <p>Counter: {this.state.counter}</p>
-        <button onClick={this.handleIncrement}>Increment</button>
-      </div>
-    );
-  }
+   render() {
+      return (
+              <div>
+                 <p>Counter: {this.state.counter}</p>
+                 <button onClick={this.handleIncrement}>Increment</button>
+              </div>
+      );
+   }
 }
 ```
 
@@ -124,33 +124,33 @@ While React efficiently manages memory and handles re-renders, improper handling
 To avoid memory leaks, ensure that you properly clean up any event listeners or subscriptions when a component is unmounted or when you no longer need them. Use React lifecycle methods, such as `componentWillUnmount` (for class components) or `useEffect` with cleanup functions (for functional components), to perform cleanup tasks.
 
 ```jsx
-import React, { Component } from 'react';
+import React, {Component} from 'React/States_Hooks';
 
 class MyComponent extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      intervalId: null
-    };
-  }
+   constructor(props) {
+      super(props);
+      this.state = {
+         intervalId: null
+      };
+   }
 
-  componentDidMount() {
-    // Start an interval timer when the component mounts
-    const intervalId = setInterval(() => {
-      console.log('Interval tick');
-    }, 1000);
+   componentDidMount() {
+      // Start an interval timer when the component mounts
+      const intervalId = setInterval(() => {
+         console.log('Interval tick');
+      }, 1000);
 
-    this.setState({ intervalId });
-  }
+      this.setState({intervalId});
+   }
 
-  componentWillUnmount() {
-    // Clean up the interval timer when the component is unmounted
-    clearInterval(this.state.intervalId);
-  }
+   componentWillUnmount() {
+      // Clean up the interval timer when the component is unmounted
+      clearInterval(this.state.intervalId);
+   }
 
-  render() {
-    return <div>Component with an interval timer</div>;
-  }
+   render() {
+      return <div>Component with an interval timer</div>;
+   }
 }
 ```
 
@@ -228,28 +228,28 @@ State can be thought of as a **snapshot** of the component's current data. Whene
 When the state of a component changes, React automatically triggers a re-render of the component and its children. During this re-rendering process, React generates a new virtual DOM (vDOM) that reflects the updated state.
 
 ```jsx
-import React, { Component } from 'react';
+import React, {Component} from 'React/States_Hooks';
 
 class Counter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0
-    };
-  }
+   constructor(props) {
+      super(props);
+      this.state = {
+         count: 0
+      };
+   }
 
-  handleIncrement = () => {
-    this.setState((prevState) => ({ count: prevState.count + 1 }));
-  };
+   handleIncrement = () => {
+      this.setState((prevState) => ({count: prevState.count + 1}));
+   };
 
-  render() {
-    return (
-      <div>
-        <p>Count: {this.state.count}</p>
-        <button onClick={this.handleIncrement}>Increment</button>
-      </div>
-    );
-  }
+   render() {
+      return (
+              <div>
+                 <p>Count: {this.state.count}</p>
+                 <button onClick={this.handleIncrement}>Increment</button>
+              </div>
+      );
+   }
 }
 ```
 
@@ -260,30 +260,30 @@ In this example, the `Counter` component has a state variable `count`, which rep
 State can also be used to conditionally render content based on its current values. By using conditional logic in the `render()` method, you can control what content is displayed depending on the state.
 
 ```jsx
-import React, { Component } from 'react';
+import React, {Component} from 'React/States_Hooks';
 
 class ToggleButton extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOn: false
-    };
-  }
+   constructor(props) {
+      super(props);
+      this.state = {
+         isOn: false
+      };
+   }
 
-  handleToggle = () => {
-    this.setState((prevState) => ({ isOn: !prevState.isOn }));
-  };
+   handleToggle = () => {
+      this.setState((prevState) => ({isOn: !prevState.isOn}));
+   };
 
-  render() {
-    return (
-      <div>
-        <button onClick={this.handleToggle}>
-          {this.state.isOn ? 'Turn Off' : 'Turn On'}
-        </button>
-        {this.state.isOn && <p>The button is ON.</p>}
-      </div>
-    );
-  }
+   render() {
+      return (
+              <div>
+                 <button onClick={this.handleToggle}>
+                    {this.state.isOn ? 'Turn Off' : 'Turn On'}
+                 </button>
+                 {this.state.isOn && <p>The button is ON.</p>}
+              </div>
+      );
+   }
 }
 ```
 
@@ -296,32 +296,32 @@ In this example, the `ToggleButton` component uses the state variable `isOn` to 
 To update state, you should use React's `setState()` method instead of modifying the state directly. Directly modifying the state can lead to unexpected behavior and may not trigger re-renders properly.
 
 ```jsx
-import React, { Component } from 'react';
+import React, {Component} from 'React/States_Hooks';
 
 class Counter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0
-    };
-  }
+   constructor(props) {
+      super(props);
+      this.state = {
+         count: 0
+      };
+   }
 
-  handleIncrement = () => {
-    // Incorrect: Directly modifying state
-    // this.state.count += 1;
+   handleIncrement = () => {
+      // Incorrect: Directly modifying state
+      // this.state.count += 1;
 
-    // Correct: Using setState()
-    this.setState((prevState) => ({ count: prevState.count + 1 }));
-  };
+      // Correct: Using setState()
+      this.setState((prevState) => ({count: prevState.count + 1}));
+   };
 
-  render() {
-    return (
-      <div>
-        <p>Count: {this.state.count}</p>
-        <button onClick={this.handleIncrement}>Increment</button>
-      </div>
-    );
-  }
+   render() {
+      return (
+              <div>
+                 <p>Count: {this.state.count}</p>
+                 <button onClick={this.handleIncrement}>Increment</button>
+              </div>
+      );
+   }
 }
 ```
 
@@ -360,37 +360,37 @@ To safely update objects in state, follow these steps:
 1. Use the `setState()` method with a callback function, which receives the previous state as an argument. This way, you ensure that you're working with the most recent state and avoid race conditions.
 
 ```jsx
-import React, { Component } from 'react';
+import React, {Component} from 'React/States_Hooks';
 
 class ExampleComponent extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      user: {
-        name: 'John',
-        age: 30
-      }
-    };
-  }
+   constructor(props) {
+      super(props);
+      this.state = {
+         user: {
+            name: 'John',
+            age: 30
+         }
+      };
+   }
 
-  handleUpdate = () => {
-    this.setState((prevState) => ({
-      user: {
-        ...prevState.user,
-        age: prevState.user.age + 1
-      }
-    }));
-  };
+   handleUpdate = () => {
+      this.setState((prevState) => ({
+         user: {
+            ...prevState.user,
+            age: prevState.user.age + 1
+         }
+      }));
+   };
 
-  render() {
-    return (
-      <div>
-        <p>Name: {this.state.user.name}</p>
-        <p>Age: {this.state.user.age}</p>
-        <button onClick={this.handleUpdate}>Increment Age</button>
-      </div>
-    );
-  }
+   render() {
+      return (
+              <div>
+                 <p>Name: {this.state.user.name}</p>
+                 <p>Age: {this.state.user.age}</p>
+                 <button onClick={this.handleUpdate}>Increment Age</button>
+              </div>
+      );
+   }
 }
 ```
 
@@ -464,34 +464,34 @@ To safely update arrays in state, follow these steps:
 1. Use the `setState()` method with a callback function, which receives the previous state as an argument. This ensures that you're working with the most recent state and avoid race conditions.
 
 ```jsx
-import React, { Component } from 'react';
+import React, {Component} from 'React/States_Hooks';
 
 class ExampleComponent extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      numbers: [1, 2, 3, 4, 5]
-    };
-  }
+   constructor(props) {
+      super(props);
+      this.state = {
+         numbers: [1, 2, 3, 4, 5]
+      };
+   }
 
-  handleUpdate = () => {
-    this.setState((prevState) => ({
-      numbers: [...prevState.numbers, 6]
-    }));
-  };
+   handleUpdate = () => {
+      this.setState((prevState) => ({
+         numbers: [...prevState.numbers, 6]
+      }));
+   };
 
-  render() {
-    return (
-      <div>
-        <ul>
-          {this.state.numbers.map((number) => (
-            <li key={number}>{number}</li>
-          ))}
-        </ul>
-        <button onClick={this.handleUpdate}>Add Number</button>
-      </div>
-    );
-  }
+   render() {
+      return (
+              <div>
+                 <ul>
+                    {this.state.numbers.map((number) => (
+                            <li key={number}>{number}</li>
+                    ))}
+                 </ul>
+                 <button onClick={this.handleUpdate}>Add Number</button>
+              </div>
+      );
+   }
 }
 ```
 
@@ -552,21 +552,21 @@ In React, user input can be captured using various HTML form elements such as in
 When capturing user input in React, it's common to use **controlled components**. Controlled components are form elements whose values are controlled by React state. The component's state acts as a single source of truth for the input's value, and any changes are reflected in the input and vice versa.
 
 ```jsx
-import React, { useState } from 'react';
+import React, {useState} from 'React/States_Hooks';
 
 const InputComponent = () => {
-  const [inputValue, setInputValue] = useState('');
+   const [inputValue, setInputValue] = useState('');
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-  };
+   const handleInputChange = (event) => {
+      setInputValue(event.target.value);
+   };
 
-  return (
-    <div>
-      <input type="text" value={inputValue} onChange={handleInputChange} />
-      <p>You entered: {inputValue}</p>
-    </div>
-  );
+   return (
+           <div>
+              <input type="text" value={inputValue} onChange={handleInputChange}/>
+              <p>You entered: {inputValue}</p>
+           </div>
+   );
 };
 ```
 
@@ -579,12 +579,12 @@ In this example, the `InputComponent` captures user input using the `input` elem
 To manage user input, you must initialize state to hold the input values. You can use React's `useState` hook (for functional components) or `this.state` (for class components) to declare and set the initial state.
 
 ```jsx
-import React, { useState } from 'react';
+import React, {useState} from 'React/States_Hooks';
 
 const InputComponent = () => {
-  const [inputValue, setInputValue] = useState('');
+   const [inputValue, setInputValue] = useState('');
 
-  // Rest of the component code...
+   // Rest of the component code...
 };
 ```
 
@@ -593,21 +593,21 @@ const InputComponent = () => {
 To update state with user input, you need to set up event handlers (e.g., `onChange`, `onClick`) that trigger when the user interacts with the input elements. The event handlers should update the corresponding state variables to reflect the changes.
 
 ```jsx
-import React, { useState } from 'react';
+import React, {useState} from 'React/States_Hooks';
 
 const InputComponent = () => {
-  const [inputValue, setInputValue] = useState('');
+   const [inputValue, setInputValue] = useState('');
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-  };
+   const handleInputChange = (event) => {
+      setInputValue(event.target.value);
+   };
 
-  return (
-    <div>
-      <input type="text" value={inputValue} onChange={handleInputChange} />
-      <p>You entered: {inputValue}</p>
-    </div>
-  );
+   return (
+           <div>
+              <input type="text" value={inputValue} onChange={handleInputChange}/>
+              <p>You entered: {inputValue}</p>
+           </div>
+   );
 };
 ```
 
@@ -620,21 +620,21 @@ In this example, the `handleInputChange` event handler updates the `inputValue` 
 React components can respond to user input changes by utilizing the state that captures the input values. You can use the state to conditionally render content, perform calculations, or trigger actions based on the user's input.
 
 ```jsx
-import React, { useState } from 'react';
+import React, {useState} from 'React/States_Hooks';
 
 const InputComponent = () => {
-  const [inputValue, setInputValue] = useState('');
+   const [inputValue, setInputValue] = useState('');
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-  };
+   const handleInputChange = (event) => {
+      setInputValue(event.target.value);
+   };
 
-  return (
-    <div>
-      <input type="text" value={inputValue} onChange={handleInputChange} />
-      {inputValue && <p>You entered: {inputValue}</p>}
-    </div>
-  );
+   return (
+           <div>
+              <input type="text" value={inputValue} onChange={handleInputChange}/>
+              {inputValue && <p>You entered: {inputValue}</p>}
+           </div>
+   );
 };
 ```
 
@@ -645,22 +645,22 @@ In this example, the `InputComponent` conditionally renders the paragraph elemen
 By leveraging state and conditional rendering, you can control what content is displayed in response to the user's input. This allows you to build dynamic user interfaces that adapt to the user's actions.
 
 ```jsx
-import React, { useState } from 'react';
+import React, {useState} from 'React/States_Hooks';
 
 const InputComponent = () => {
-  const [inputValue, setInputValue] = useState('');
+   const [inputValue, setInputValue] = useState('');
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-  };
+   const handleInputChange = (event) => {
+      setInputValue(event.target.value);
+   };
 
-  return (
-    <div>
-      <input type="text" value={inputValue} onChange={handleInputChange} />
-      {inputValue.toLowerCase() === 'hello' && <p>Hello there!</p>}
-      {inputValue.toLowerCase() === 'bye' && <p>Goodbye!</p>}
-    </div>
-  );
+   return (
+           <div>
+              <input type="text" value={inputValue} onChange={handleInputChange}/>
+              {inputValue.toLowerCase() === 'hello' && <p>Hello there!</p>}
+              {inputValue.toLowerCase() === 'bye' && <p>Goodbye!</p>}
+           </div>
+   );
 };
 ```
 
@@ -779,20 +779,20 @@ In React, sharing state between components is a common requirement, especially w
 In React, state can be shared from a parent component to its child components through **props**. Props are read-only and allow data to flow unidirectionally from parent to child. By passing state as props, child components can access and use the shared data.
 
 ```jsx
-import React from 'react';
+import React from 'React/States_Hooks';
 
 const ParentComponent = () => {
-  const sharedState = 'This is a shared state';
+   const sharedState = 'This is a shared state';
 
-  return (
-    <div>
-      <ChildComponent sharedData={sharedState} />
-    </div>
-  );
+   return (
+           <div>
+              <ChildComponent sharedData={sharedState}/>
+           </div>
+   );
 };
 
 const ChildComponent = (props) => {
-  return <p>{props.sharedData}</p>;
+   return <p>{props.sharedData}</p>;
 };
 ```
 
@@ -803,29 +803,29 @@ In this example, `ParentComponent` shares `sharedState` with its child `ChildCom
 To update shared state that resides in the parent component, child components can use callback functions passed as props. The parent component can define these callback functions and pass them down to the child components, allowing them to update the shared state indirectly.
 
 ```jsx
-import React, { useState } from 'react';
+import React, {useState} from 'React/States_Hooks';
 
 const ParentComponent = () => {
-  const [sharedState, setSharedState] = useState('Initial state');
+   const [sharedState, setSharedState] = useState('Initial state');
 
-  const updateSharedState = () => {
-    setSharedState('Updated state');
-  };
+   const updateSharedState = () => {
+      setSharedState('Updated state');
+   };
 
-  return (
-    <div>
-      <ChildComponent sharedData={sharedState} updateState={updateSharedState} />
-    </div>
-  );
+   return (
+           <div>
+              <ChildComponent sharedData={sharedState} updateState={updateSharedState}/>
+           </div>
+   );
 };
 
 const ChildComponent = (props) => {
-  return (
-    <div>
-      <p>{props.sharedData}</p>
-      <button onClick={props.updateState}>Update State</button>
-    </div>
-  );
+   return (
+           <div>
+              <p>{props.sharedData}</p>
+              <button onClick={props.updateState}>Update State</button>
+           </div>
+   );
 };
 ```
 
@@ -838,34 +838,34 @@ In this example, `ParentComponent` passes the `updateSharedState` callback down 
 When multiple components need access to the same shared state or need to synchronize their data, **lifting state up** is a useful technique. Lifting state involves moving the shared state to a common ancestor component that encapsulates all the components that require access to that state.
 
 ```jsx
-import React, { useState } from 'react';
+import React, {useState} from 'React/States_Hooks';
 
 const CommonAncestorComponent = () => {
-  const [sharedState, setSharedState] = useState('Initial state');
+   const [sharedState, setSharedState] = useState('Initial state');
 
-  const updateSharedState = () => {
-    setSharedState('Updated state');
-  };
+   const updateSharedState = () => {
+      setSharedState('Updated state');
+   };
 
-  return (
-    <div>
-      <ChildComponent sharedData={sharedState} updateState={updateSharedState} />
-      <OtherChildComponent sharedData={sharedState} />
-    </div>
-  );
+   return (
+           <div>
+              <ChildComponent sharedData={sharedState} updateState={updateSharedState}/>
+              <OtherChildComponent sharedData={sharedState}/>
+           </div>
+   );
 };
 
 const ChildComponent = (props) => {
-  return (
-    <div>
-      <p>{props.sharedData}</p>
-      <button onClick={props.updateState}>Update State</button>
-    </div>
-  );
+   return (
+           <div>
+              <p>{props.sharedData}</p>
+              <button onClick={props.updateState}>Update State</button>
+           </div>
+   );
 };
 
 const OtherChildComponent = (props) => {
-  return <p>{props.sharedData}</p>;
+   return <p>{props.sharedData}</p>;
 };
 ```
 
@@ -939,34 +939,34 @@ Preserving state involves saving state values so that they can be used later, ev
 One common strategy for preserving state is to use **Local Storage**. Local Storage is a web browser feature that allows you to store key-value pairs locally in the user's browser. Data stored in Local Storage persists even after the user closes the browser or reloads the page.
 
 ```jsx
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'React/States_Hooks';
 
 const PreservingStateComponent = () => {
-  const [count, setCount] = useState(0);
+   const [count, setCount] = useState(0);
 
-  // Load the count from Local Storage on component mount
-  useEffect(() => {
-    const savedCount = localStorage.getItem('count');
-    if (savedCount) {
-      setCount(parseInt(savedCount, 10));
-    }
-  }, []);
+   // Load the count from Local Storage on component mount
+   useEffect(() => {
+      const savedCount = localStorage.getItem('count');
+      if (savedCount) {
+         setCount(parseInt(savedCount, 10));
+      }
+   }, []);
 
-  // Save the count to Local Storage whenever it changes
-  useEffect(() => {
-    localStorage.setItem('count', count.toString());
-  }, [count]);
+   // Save the count to Local Storage whenever it changes
+   useEffect(() => {
+      localStorage.setItem('count', count.toString());
+   }, [count]);
 
-  const handleIncrement = () => {
-    setCount((prevCount) => prevCount + 1);
-  };
+   const handleIncrement = () => {
+      setCount((prevCount) => prevCount + 1);
+   };
 
-  return (
-    <div>
-      <p>Count: {count}</p>
-      <button onClick={handleIncrement}>Increment</button>
-    </div>
-  );
+   return (
+           <div>
+              <p>Count: {count}</p>
+              <button onClick={handleIncrement}>Increment</button>
+           </div>
+   );
 };
 ```
 
@@ -987,27 +987,27 @@ Resetting state involves returning the state to its initial values or default st
 You can implement state reset in React components by providing a mechanism, such as a button or an event, to trigger the reset action.
 
 ```jsx
-import React, { useState } from 'react';
+import React, {useState} from 'React/States_Hooks';
 
 const ResettingStateComponent = () => {
-  const [count, setCount] = useState(0);
-  const initialCount = 0; // Initial value
+   const [count, setCount] = useState(0);
+   const initialCount = 0; // Initial value
 
-  const handleIncrement = () => {
-    setCount((prevCount) => prevCount + 1);
-  };
+   const handleIncrement = () => {
+      setCount((prevCount) => prevCount + 1);
+   };
 
-  const handleReset = () => {
-    setCount(initialCount);
-  };
+   const handleReset = () => {
+      setCount(initialCount);
+   };
 
-  return (
-    <div>
-      <p>Count: {count}</p>
-      <button onClick={handleIncrement}>Increment</button>
-      <button onClick={handleReset}>Reset</button>
-    </div>
-  );
+   return (
+           <div>
+              <p>Count: {count}</p>
+              <button onClick={handleIncrement}>Increment</button>
+              <button onClick={handleReset}>Reset</button>
+           </div>
+   );
 };
 ```
 
@@ -1018,37 +1018,37 @@ In this example, the `ResettingStateComponent` provides a "Reset" button that, w
 You can also use Local Storage to preserve and reset state. For instance, you can save the initial state in Local Storage and retrieve it whenever a reset is required.
 
 ```jsx
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'React/States_Hooks';
 
 const ResettingStateComponent = () => {
-  const [count, setCount] = useState(0);
-  const initialCount = 0;
+   const [count, setCount] = useState(0);
+   const initialCount = 0;
 
-  useEffect(() => {
-    const savedCount = localStorage.getItem('count');
-    if (savedCount) {
-      setCount(parseInt(savedCount, 10));
-    } else {
+   useEffect(() => {
+      const savedCount = localStorage.getItem('count');
+      if (savedCount) {
+         setCount(parseInt(savedCount, 10));
+      } else {
+         setCount(initialCount);
+      }
+   }, []);
+
+   const handleIncrement = () => {
+      setCount((prevCount) => prevCount + 1);
+   };
+
+   const handleReset = () => {
       setCount(initialCount);
-    }
-  }, []);
+      localStorage.setItem('count', initialCount.toString());
+   };
 
-  const handleIncrement = () => {
-    setCount((prevCount) => prevCount + 1);
-  };
-
-  const handleReset = () => {
-    setCount(initialCount);
-    localStorage.setItem('count', initialCount.toString());
-  };
-
-  return (
-    <div>
-      <p>Count: {count}</p>
-      <button onClick={handleIncrement}>Increment</button>
-      <button onClick={handleReset}>Reset</button>
-    </div>
-  );
+   return (
+           <div>
+              <p>Count: {count}</p>
+              <button onClick={handleIncrement}>Increment</button>
+              <button onClick={handleReset}>Reset</button>
+           </div>
+   );
 };
 ```
 
@@ -1136,33 +1136,33 @@ In this example, the `reducer` function handles two actions: "INCREMENT" and "DE
 To use the reducer in components, import it and initialize state using the reducer function and the `useReducer` hook. The `useReducer` hook returns the current state and a dispatch function, which is used to trigger state updates.
 
 ```jsx
-import React, { useReducer } from 'react';
+import React, {useReducer} from 'React/States_Hooks';
 
 const initialState = {
-  count: 0,
+   count: 0,
 };
 
 const reducer = (state, action) => {
-  switch (action.type) {
-    case 'INCREMENT':
-      return { ...state, count: state.count + 1 };
-    case 'DECREMENT':
-      return { ...state, count: state.count - 1 };
-    default:
-      return state;
-  }
+   switch (action.type) {
+      case 'INCREMENT':
+         return {...state, count: state.count + 1};
+      case 'DECREMENT':
+         return {...state, count: state.count - 1};
+      default:
+         return state;
+   }
 };
 
 const ReducerComponent = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+   const [state, dispatch] = useReducer(reducer, initialState);
 
-  return (
-    <div>
-      <p>Count: {state.count}</p>
-      <button onClick={() => dispatch({ type: 'INCREMENT' })}>Increment</button>
-      <button onClick={() => dispatch({ type: 'DECREMENT' })}>Decrement</button>
-    </div>
-  );
+   return (
+           <div>
+              <p>Count: {state.count}</p>
+              <button onClick={() => dispatch({type: 'INCREMENT'})}>Increment</button>
+              <button onClick={() => dispatch({type: 'DECREMENT'})}>Decrement</button>
+           </div>
+   );
 };
 ```
 
@@ -1212,7 +1212,7 @@ Context provides two components to facilitate data sharing:
 To create a new Context, use the `React.createContext` function, which returns an object containing a Provider and a Consumer component.
 
 ```jsx
-import React from 'react';
+import React from 'React/States_Hooks';
 
 const DataContext = React.createContext();
 ```
@@ -1222,18 +1222,18 @@ const DataContext = React.createContext();
 To provide data to the components, wrap them in the Context Provider and pass the data as the `value` prop.
 
 ```jsx
-import React from 'react';
+import React from 'React/States_Hooks';
 
 const DataContext = React.createContext();
 
 const App = () => {
-  const data = { message: 'Hello from Context!' };
+   const data = {message: 'Hello from Context!'};
 
-  return (
-    <DataContext.Provider value={data}>
-      <ChildComponent />
-    </DataContext.Provider>
-  );
+   return (
+           <DataContext.Provider value={data}>
+              <ChildComponent/>
+           </DataContext.Provider>
+   );
 };
 ```
 
@@ -1246,16 +1246,16 @@ In this example, `App` provides the data object to all components wrapped within
 To access the shared data within components, use the Context Consumer. The Consumer component uses a render prop pattern to access the data and can be used anywhere within the component tree.
 
 ```jsx
-import React from 'react';
+import React from 'React/States_Hooks';
 
 const DataContext = React.createContext();
 
 const ChildComponent = () => {
-  return (
-    <DataContext.Consumer>
-      {(data) => <p>{data.message}</p>}
-    </DataContext.Consumer>
-  );
+   return (
+           <DataContext.Consumer>
+              {(data) => <p>{data.message}</p>}
+           </DataContext.Consumer>
+   );
 };
 ```
 
@@ -1266,30 +1266,30 @@ In this example, `ChildComponent` consumes the data provided by `DataContext.Pro
 Context is especially powerful when it comes to deeply nested components that need access to the shared data without explicitly passing it as props through intermediate components.
 
 ```jsx
-import React from 'react';
+import React from 'React/States_Hooks';
 
 const DataContext = React.createContext();
 
 const GrandchildComponent = () => {
-  return (
-    <DataContext.Consumer>
-      {(data) => <p>{data.message}</p>}
-    </DataContext.Consumer>
-  );
+   return (
+           <DataContext.Consumer>
+              {(data) => <p>{data.message}</p>}
+           </DataContext.Consumer>
+   );
 };
 
 const ChildComponent = () => {
-  return <GrandchildComponent />;
+   return <GrandchildComponent/>;
 };
 
 const App = () => {
-  const data = { message: 'Hello from Context!' };
+   const data = {message: 'Hello from Context!'};
 
-  return (
-    <DataContext.Provider value={data}>
-      <ChildComponent />
-    </DataContext.Provider>
-  );
+   return (
+           <DataContext.Provider value={data}>
+              <ChildComponent/>
+           </DataContext.Provider>
+   );
 };
 ```
 
@@ -1375,14 +1375,14 @@ In this example, the reducer handles "ADD_TODO" and "DELETE_TODO" actions to add
 Create a new Context using `React.createContext`, and initialize the state using the reducer and initial state.
 
 ```jsx
-import React, { useReducer, createContext } from 'react';
+import React, {useReducer, createContext} from 'React/States_Hooks';
 
 const initialState = {
-  count: 0,
+   count: 0,
 };
 
 const reducer = (state, action) => {
-  // Reducer logic here
+   // Reducer logic here
 };
 
 const CountContext = createContext();
@@ -1472,17 +1472,17 @@ Before resorting to escape hatches, make sure you've exhausted the possibilities
 One of the most common escape hatches in React is the use of the `ref` attribute. By creating a ref and attaching it to a React element, you can gain direct access to the DOM node and perform imperative DOM manipulations.
 
 ```jsx
-import React, { useRef, useEffect } from 'react';
+import React, {useRef, useEffect} from 'React/States_Hooks';
 
 const MyComponent = () => {
-  const myInputRef = useRef();
+   const myInputRef = useRef();
 
-  useEffect(() => {
-    // Focus the input element on component mount
-    myInputRef.current.focus();
-  }, []);
+   useEffect(() => {
+      // Focus the input element on component mount
+      myInputRef.current.focus();
+   }, []);
 
-  return <input ref={myInputRef} type="text" />;
+   return <input ref={myInputRef} type="text"/>;
 };
 ```
 
@@ -1541,17 +1541,17 @@ However, it's essential to use refs judiciously and consider whether the task ca
 To create a ref, you can use the `React.createRef` method. This method returns a ref object that can be attached to a React element.
 
 ```jsx
-import React from 'react';
+import React from 'React/States_Hooks';
 
 class MyComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.myRef = React.createRef();
-  }
+   constructor(props) {
+      super(props);
+      this.myRef = React.createRef();
+   }
 
-  render() {
-    return <input ref={this.myRef} />;
-  }
+   render() {
+      return <input ref={this.myRef}/>;
+   }
 }
 ```
 
@@ -1562,12 +1562,12 @@ In this example, `this.myRef` is created using `React.createRef`, and the ref is
 If you're using functional components, you can create a ref using the `useRef` hook.
 
 ```jsx
-import React, { useRef } from 'react';
+import React, {useRef} from 'React/States_Hooks';
 
 const MyComponent = () => {
-  const myRef = useRef();
+   const myRef = useRef();
 
-  return <input ref={myRef} />;
+   return <input ref={myRef}/>;
 };
 ```
 
@@ -1580,21 +1580,21 @@ In this functional component example, `useRef` is used to create the `myRef` ref
 Once you have created a ref, you can access the corresponding DOM element using the `current` property of the ref object.
 
 ```jsx
-import React, { useRef } from 'react';
+import React, {useRef} from 'React/States_Hooks';
 
 const MyComponent = () => {
-  const inputRef = useRef();
+   const inputRef = useRef();
 
-  const handleButtonClick = () => {
-    inputRef.current.focus();
-  };
+   const handleButtonClick = () => {
+      inputRef.current.focus();
+   };
 
-  return (
-    <div>
-      <input ref={inputRef} />
-      <button onClick={handleButtonClick}>Focus Input</button>
-    </div>
-  );
+   return (
+           <div>
+              <input ref={inputRef}/>
+              <button onClick={handleButtonClick}>Focus Input</button>
+           </div>
+   );
 };
 ```
 
@@ -1605,23 +1605,23 @@ In this example, the `inputRef` ref is used to access the `input` element and se
 With refs, you can perform various DOM manipulations, such as setting focus, reading input values, or modifying element properties directly.
 
 ```jsx
-import React, { useRef } from 'react';
+import React, {useRef} from 'React/States_Hooks';
 
 const MyComponent = () => {
-  const inputRef = useRef();
+   const inputRef = useRef();
 
-  const handleButtonClick = () => {
-    const inputValue = inputRef.current.value;
-    console.log('Input Value:', inputValue);
-    inputRef.current.value = ''; // Clear input field
-  };
+   const handleButtonClick = () => {
+      const inputValue = inputRef.current.value;
+      console.log('Input Value:', inputValue);
+      inputRef.current.value = ''; // Clear input field
+   };
 
-  return (
-    <div>
-      <input ref={inputRef} />
-      <button onClick={handleButtonClick}>Submit</button>
-    </div>
-  );
+   return (
+           <div>
+              <input ref={inputRef}/>
+              <button onClick={handleButtonClick}>Submit</button>
+           </div>
+   );
 };
 ```
 
@@ -1634,25 +1634,25 @@ In this example, the `inputRef` ref is used to read the value of the `input` ele
 Refs can also be used to reference child components directly. To do this, you create a ref in the parent component and attach it to the child component using a `ref` prop.
 
 ```jsx
-import React, { useRef } from 'react';
+import React, {useRef} from 'React/States_Hooks';
 
 const ChildComponent = React.forwardRef((props, ref) => {
-  return <input ref={ref} />;
+   return <input ref={ref}/>;
 });
 
 const ParentComponent = () => {
-  const inputRef = useRef();
+   const inputRef = useRef();
 
-  const handleButtonClick = () => {
-    inputRef.current.focus();
-  };
+   const handleButtonClick = () => {
+      inputRef.current.focus();
+   };
 
-  return (
-    <div>
-      <ChildComponent ref={inputRef} />
-      <button onClick={handleButtonClick}>Focus Input</button>
-    </div>
-  );
+   return (
+           <div>
+              <ChildComponent ref={inputRef}/>
+              <button onClick={handleButtonClick}>Focus Input</button>
+           </div>
+   );
 };
 ```
 
@@ -1663,25 +1663,25 @@ In this example, the `ChildComponent` is passed a `ref` prop and then forwarded 
 By referencing child components with refs, you can also invoke methods directly on the child component.
 
 ```jsx
-import React, { useRef } from 'react';
+import React, {useRef} from 'React/States_Hooks';
 
 const ChildComponent = React.forwardRef((props, ref) => {
-  const focusInput = () => {
-    ref.current.focus();
-  };
+   const focusInput = () => {
+      ref.current.focus();
+   };
 
-  return (
-    <div>
-      <input ref={ref} />
-      <button onClick={focusInput}>Focus Input</button>
-    </div>
-  );
+   return (
+           <div>
+              <input ref={ref}/>
+              <button onClick={focusInput}>Focus Input</button>
+           </div>
+   );
 });
 
 const ParentComponent = () => {
-  const inputRef = useRef();
+   const inputRef = useRef();
 
-  return <ChildComponent ref={inputRef} />;
+   return <ChildComponent ref={inputRef}/>;
 };
 ```
 
@@ -1714,20 +1714,20 @@ Effects help keep side effects separate from the primary rendering logic. This s
 To create an effect in a functional component, you can use the `useEffect` hook. The `useEffect` hook takes two arguments: a function containing the effect's logic and an optional array of dependencies.
 
 ```jsx
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'React/States_Hooks';
 
 const MyComponent = () => {
-  const [data, setData] = useState([]);
+   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    // Perform side effect here (e.g., data fetching)
-    // Update state if needed
-    setData([...]); // Update state
-  }, []);
-  
-  return (
-    // JSX for rendering
-  );
+   useEffect(() => {
+      // Perform side effect here (e.g., data fetching)
+      // Update state if needed
+      setData([...]); // Update state
+   }, []);
+
+   return (
+           // JSX for rendering
+   );
 };
 ```
 
@@ -1752,30 +1752,30 @@ If the array of dependencies is empty, the effect will only run once after the i
 Effects can also handle cleanup tasks, such as canceling network requests or clearing subscriptions, to avoid memory leaks or unnecessary computations.
 
 ```jsx
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'React/States_Hooks';
 
 const MyComponent = () => {
-  const [data, setData] = useState([]);
+   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      // Perform data fetching here
-      const result = await fetch('https://api.example.com/data');
-      const data = await result.json();
-      setData(data);
-    };
+   useEffect(() => {
+      const fetchData = async () => {
+         // Perform data fetching here
+         const result = await fetch('https://api.example.com/data');
+         const data = await result.json();
+         setData(data);
+      };
 
-    fetchData();
+      fetchData();
 
-    // Cleanup function
-    return () => {
-      // Perform cleanup tasks (e.g., canceling requests or clearing subscriptions)
-    };
-  }, []);
-  
-  return (
-    // JSX for rendering
-  );
+      // Cleanup function
+      return () => {
+         // Perform cleanup tasks (e.g., canceling requests or clearing subscriptions)
+      };
+   }, []);
+
+   return (
+           // JSX for rendering
+   );
 };
 ```
 
@@ -1811,25 +1811,25 @@ In this example, `fetchData` is a function that fetches data and `cleanup` is a 
 You can use multiple effects in a single component to manage different side effects independently.
 
 ```jsx
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'React/States_Hooks';
 
 const MyComponent = () => {
-  const [data, setData] = useState([]);
-  const [count, setCount] = useState(0);
+   const [data, setData] = useState([]);
+   const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    // Effect for fetching data
-    // ...
-  }, [dependency1]);
+   useEffect(() => {
+      // Effect for fetching data
+      // ...
+   }, [dependency1]);
 
-  useEffect(() => {
-    // Effect for handling count changes
-    // ...
-  }, [count]);
+   useEffect(() => {
+      // Effect for handling count changes
+      // ...
+   }, [count]);
 
-  return (
-    // JSX for rendering
-  );
+   return (
+           // JSX for rendering
+   );
 };
 ```
 
@@ -1876,22 +1876,22 @@ Effects are crucial when you need to perform tasks that involve interactions out
 If you have a task that only needs to be performed once after the component is mounted, you might not need an effect. You can handle one-time initialization by placing the code directly in the component function.
 
 ```jsx
-import React, { useState } from 'react';
+import React, {useState} from 'React/States_Hooks';
 
 const MyComponent = () => {
-  // State and logic here
+   // State and logic here
 
-  // One-time initialization
-  const fetchData = async () => {
-    const data = await fetch('https://api.example.com/data');
-    setData(data);
-  };
+   // One-time initialization
+   const fetchData = async () => {
+      const data = await fetch('https://api.example.com/data');
+      setData(data);
+   };
 
-  fetchData(); // Fetch data once after component mounts
+   fetchData(); // Fetch data once after component mounts
 
-  return (
-    // JSX for rendering
-  );
+   return (
+           // JSX for rendering
+   );
 };
 ```
 
@@ -1900,18 +1900,18 @@ const MyComponent = () => {
 If you need to derive state from props or other state variables, you might not need an effect. You can directly compute the derived state using the current props and state.
 
 ```jsx
-import React, { useState } from 'react';
+import React, {useState} from 'React/States_Hooks';
 
-const MyComponent = ({ initialValue }) => {
-  // State and logic here
-  const [derivedState, setDerivedState] = useState(initialValue * 2);
+const MyComponent = ({initialValue}) => {
+   // State and logic here
+   const [derivedState, setDerivedState] = useState(initialValue * 2);
 
-  // State derived from props and other state
-  // const derivedState = initialValue * 2;
+   // State derived from props and other state
+   // const derivedState = initialValue * 2;
 
-  return (
-    // JSX for rendering
-  );
+   return (
+           // JSX for rendering
+   );
 };
 ```
 
@@ -1920,18 +1920,18 @@ const MyComponent = ({ initialValue }) => {
 If you need to respond to changes in props but don't require additional side effects, you might not need an effect. React will automatically re-render the component when props change, and you can handle the changes directly within the component function.
 
 ```jsx
-import React from 'react';
+import React from 'React/States_Hooks';
 
-const MyComponent = ({ value }) => {
-  // Logic and state here
+const MyComponent = ({value}) => {
+   // Logic and state here
 
-  // Respond to prop changes without an effect
-  // React will automatically re-render the component when props change
-  // ...
+   // Respond to prop changes without an effect
+   // React will automatically re-render the component when props change
+   // ...
 
-  return (
-    // JSX for rendering
-  );
+   return (
+           // JSX for rendering
+   );
 };
 ```
 
@@ -1940,19 +1940,19 @@ const MyComponent = ({ value }) => {
 If you need to update state based on previous state values and don't require side effects, you might not need an effect. React's state updater functions can handle updates synchronously.
 
 ```jsx
-import React, { useState } from 'react';
+import React, {useState} from 'React/States_Hooks';
 
 const MyComponent = () => {
-  const [count, setCount] = useState(0);
+   const [count, setCount] = useState(0);
 
-  // Update state synchronously without an effect
-  const handleIncrement = () => {
-    setCount((prevCount) => prevCount + 1);
-  };
+   // Update state synchronously without an effect
+   const handleIncrement = () => {
+      setCount((prevCount) => prevCount + 1);
+   };
 
-  return (
-    // JSX for rendering
-  );
+   return (
+           // JSX for rendering
+   );
 };
 ```
 
@@ -1963,19 +1963,19 @@ const MyComponent = () => {
 For one-time initialization or default values, you can use initial state or props directly in the component.
 
 ```jsx
-import React, { useState } from 'react';
+import React, {useState} from 'React/States_Hooks';
 
 const MyComponent = () => {
-  const [data, setData] = useState([]); // Initial state
+   const [data, setData] = useState([]); // Initial state
 
-  // Logic here
+   // Logic here
 
-  // One-time initialization with initial state
-  // const data = [];
+   // One-time initialization with initial state
+   // const data = [];
 
-  return (
-    // JSX for rendering
-  );
+   return (
+           // JSX for rendering
+   );
 };
 ```
 
@@ -1984,24 +1984,24 @@ const MyComponent = () => {
 For tasks that involve component lifecycle management, you can use class components and their lifecycle methods like `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`.
 
 ```jsx
-import React, { Component } from 'react';
+import React, {Component} from 'React/States_Hooks';
 
 class MyComponent extends Component {
-  componentDidMount() {
-    // One-time initialization after component mounts
-  }
+   componentDidMount() {
+      // One-time initialization after component mounts
+   }
 
-  componentDidUpdate(prevProps, prevState) {
-    // Respond to prop or state changes
-  }
+   componentDidUpdate(prevProps, prevState) {
+      // Respond to prop or state changes
+   }
 
-  componentWillUnmount() {
-    // Cleanup tasks before component unmounts
-  }
+   componentWillUnmount() {
+      // Cleanup tasks before component unmounts
+   }
 
-  render() {
-    // JSX for rendering
-  }
+   render() {
+      // JSX for rendering
+   }
 }
 ```
 
@@ -2010,20 +2010,20 @@ class MyComponent extends Component {
 For derived state or callback optimizations, you can use the `useMemo` and `useCallback` hooks to memoize computations and prevent unnecessary re-renders.
 
 ```jsx
-import React, { useMemo, useCallback } from 'react';
+import React, {useMemo, useCallback} from 'React/States_Hooks';
 
-const MyComponent = ({ value }) => {
-  // Derived state using useMemo
-  const derivedState = useMemo(() => value * 2, [value]);
+const MyComponent = ({value}) => {
+   // Derived state using useMemo
+   const derivedState = useMemo(() => value * 2, [value]);
 
-  // Memoized callback using useCallback
-  const handleClick = useCallback(() => {
-    // Handle click event
-  }, []);
+   // Memoized callback using useCallback
+   const handleClick = useCallback(() => {
+      // Handle click event
+   }, []);
 
-  return (
-    // JSX for rendering
-  );
+   return (
+           // JSX for rendering
+   );
 };
 ```
 
@@ -2112,21 +2112,21 @@ When events and effects are decoupled, debugging becomes more straightforward. Y
 To separate events from effects, keep the event handling logic within event handler functions. Event handlers should update the component's state or trigger actions based on user interactions.
 
 ```jsx
-import React, { useState } from 'react';
+import React, {useState} from 'React/States_Hooks';
 
 const MyComponent = () => {
-  const [count, setCount] = useState(0);
+   const [count, setCount] = useState(0);
 
-  const handleButtonClick = () => {
-    setCount(count + 1);
-  };
+   const handleButtonClick = () => {
+      setCount(count + 1);
+   };
 
-  return (
-    <div>
-      <p>Count: {count}</p>
-      <button onClick={handleButtonClick}>Increment</button>
-    </div>
-  );
+   return (
+           <div>
+              <p>Count: {count}</p>
+              <button onClick={handleButtonClick}>Increment</button>
+           </div>
+   );
 };
 ```
 
@@ -2137,26 +2137,26 @@ In this example, `handleButtonClick` is a separate function that handles the but
 To handle side effects in response to events, use hooks like `useEffect`. Hooks provide a declarative way to manage effects and ensure they run after rendering.
 
 ```jsx
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'React/States_Hooks';
 
 const MyComponent = () => {
-  const [count, setCount] = useState(0);
+   const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    // Side effect logic here
-    document.title = `Count: ${count}`;
-  }, [count]);
+   useEffect(() => {
+      // Side effect logic here
+      document.title = `Count: ${count}`;
+   }, [count]);
 
-  const handleButtonClick = () => {
-    setCount(count + 1);
-  };
+   const handleButtonClick = () => {
+      setCount(count + 1);
+   };
 
-  return (
-    <div>
-      <p>Count: {count}</p>
-      <button onClick={handleButtonClick}>Increment</button>
-    </div>
-  );
+   return (
+           <div>
+              <p>Count: {count}</p>
+              <button onClick={handleButtonClick}>Increment</button>
+           </div>
+   );
 };
 ```
 
@@ -2167,26 +2167,26 @@ In this example, the `useEffect` hook is used to update the document title whene
 Here's a sample implementation of a component that separates events from effects:
 
 ```jsx
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'React/States_Hooks';
 
 const MyComponent = () => {
-  const [count, setCount] = useState(0);
+   const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    // Side effect logic here
-    document.title = `Count: ${count}`;
-  }, [count]);
+   useEffect(() => {
+      // Side effect logic here
+      document.title = `Count: ${count}`;
+   }, [count]);
 
-  const handleButtonClick = () => {
-    setCount(count + 1);
-  };
+   const handleButtonClick = () => {
+      setCount(count + 1);
+   };
 
-  return (
-    <div>
-      <p>Count: {count}</p>
-      <button onClick={handleButtonClick}>Increment</button>
-    </div>
-  );
+   return (
+           <div>
+              <p>Count: {count}</p>
+              <button onClick={handleButtonClick}>Increment</button>
+           </div>
+   );
 };
 ```
 
@@ -2230,17 +2230,17 @@ Specifying effect dependencies is crucial to ensure that effects run when needed
 In some cases, you may want to run an effect only once after the component is mounted and never re-run it. To achieve this, you can provide an empty array as the dependency list.
 
 ```jsx
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'React/States_Hooks';
 
 const MyComponent = () => {
-  useEffect(() => {
-    // Effect logic here
-    console.log('Effect runs only once after component mounts.');
-  }, []);
+   useEffect(() => {
+      // Effect logic here
+      console.log('Effect runs only once after component mounts.');
+   }, []);
 
-  return (
-    // JSX for rendering
-  );
+   return (
+           // JSX for rendering
+   );
 };
 ```
 
@@ -2251,17 +2251,17 @@ In this example, the effect has an empty dependency array, causing it to run onl
 If your effect does not depend on any state variables or props and should run on every render, you can omit the dependency array altogether. This will cause the effect to run after every completed render.
 
 ```jsx
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'React/States_Hooks';
 
 const MyComponent = () => {
-  useEffect(() => {
-    // Effect logic here
-    console.log('Effect runs after every render.');
-  });
+   useEffect(() => {
+      // Effect logic here
+      console.log('Effect runs after every render.');
+   });
 
-  return (
-    // JSX for rendering
-  );
+   return (
+           // JSX for rendering
+   );
 };
 ```
 
@@ -2272,22 +2272,22 @@ In this example, the effect does not have a dependency array, so it will run aft
 In cases where you have an effect with no dependencies and you need to perform cleanup tasks when the component unmounts, you can return a cleanup function from the effect.
 
 ```jsx
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'React/States_Hooks';
 
 const MyComponent = () => {
-  useEffect(() => {
-    // Effect logic here
+   useEffect(() => {
+      // Effect logic here
 
-    // Cleanup function
-    return () => {
-      // Cleanup tasks here
-      console.log('Cleanup tasks performed before unmount.');
-    };
-  });
+      // Cleanup function
+      return () => {
+         // Cleanup tasks here
+         console.log('Cleanup tasks performed before unmount.');
+      };
+   });
 
-  return (
-    // JSX for rendering
-  );
+   return (
+           // JSX for rendering
+   );
 };
 ```
 
@@ -2339,14 +2339,14 @@ Custom hooks are regular JavaScript functions that can accept parameters and ret
 
 ```jsx
 // Custom hook: useCustomHook
-import { useState } from 'react';
+import {useState} from 'React/States_Hooks';
 
 const useCustomHook = (initialValue) => {
-  const [state, setState] = useState(initialValue);
+   const [state, setState] = useState(initialValue);
 
-  // Add custom logic here
+   // Add custom logic here
 
-  return state;
+   return state;
 };
 
 export default useCustomHook;
@@ -2362,17 +2362,17 @@ To use a custom hook in a component, simply import it and call it within the com
 
 ```jsx
 // Using the custom hook in a component
-import React from 'react';
+import React from 'React/States_Hooks';
 import useCustomHook from './useCustomHook';
 
 const MyComponent = () => {
-  const value = useCustomHook(0);
+   const value = useCustomHook(0);
 
-  // Use the value returned by the custom hook in the component
+   // Use the value returned by the custom hook in the component
 
-  return (
-    // JSX for rendering
-  );
+   return (
+           // JSX for rendering
+   );
 };
 ```
 
@@ -2382,16 +2382,16 @@ Custom hooks are an excellent way to share stateful logic across multiple compon
 
 ```jsx
 // Custom hook: useToggle
-import { useState } from 'react';
+import {useState} from 'React/States_Hooks';
 
 const useToggle = (initialValue) => {
-  const [value, setValue] = useState(initialValue);
+   const [value, setValue] = useState(initialValue);
 
-  const toggle = () => {
-    setValue((prevValue) => !prevValue);
-  };
+   const toggle = () => {
+      setValue((prevValue) => !prevValue);
+   };
 
-  return [value, toggle];
+   return [value, toggle];
 };
 
 export default useToggle;

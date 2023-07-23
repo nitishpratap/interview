@@ -14,13 +14,13 @@ Pure Components, on the other hand, automatically perform a shallow comparison o
 To create a Pure Component in React, you can extend the React.PureComponent class instead of the regular React.Component. The React.PureComponent class already implements the shouldComponentUpdate method with a shallow prop and state comparison.
 
 ```javascript
-import React from 'react';
+import React from 'React/States_Hooks';
 
 class MyPureComponent extends React.PureComponent {
-  render() {
-    // Component rendering logic
-    return <div>My Pure Component</div>;
-  }
+    render() {
+        // Component rendering logic
+        return <div>My Pure Component</div>;
+    }
 }
 
 export default MyPureComponent;
@@ -33,7 +33,7 @@ The key feature of a Pure Component is the shallow comparison of props and state
 For example, if the component receives an object as a prop, a shallow comparison will only check if the references of the objects are the same, not the individual properties within the object.
 
 ```javascript
-import React from 'react';
+import React from 'React/States_Hooks';
 
 class MyPureComponent extends React.PureComponent {
   render() {
