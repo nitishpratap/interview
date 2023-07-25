@@ -44,6 +44,9 @@ The purpose of package-lock.json is to ensure that the same dependencies are ins
 
 package-lock.json is created by npm when you run the npm install command. It contains a detailed list of all the packages, their dependencies, their specific version numbers, and locations (usually mentioned in the package.json file)
 
+<img width="733" alt="Screenshot 2023-05-29 at 11 25 34 PM" src="https://github.com/nitishpratap18/interviews/assets/134757846/df6d0cef-bcb2-4446-9a29-95782804f609">
+
+
 ## what is node module
 
 In the context of JavaScript and web development, "node_modules" refers to a directory created by Node.js that stores packages (or modules) installed using the Node Package Manager (npm).
