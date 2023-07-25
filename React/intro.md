@@ -1,5 +1,15 @@
 
 * React is a library.
+  
+* React is a front-end and open-source JavaScript library which is useful in developing user interfaces specifically for applications with a single page. It is helpful in building complex and reusable user interface(UI) components of mobile and web applications as it follows the component-based approach.
+ 
+* The important features of React are:
+
+It supports server-side rendering.
+It will make use of the virtual DOM rather than real DOM (Data Object Model) as RealDOM manipulations are expensive.
+It follows unidirectional data binding or data flow.
+It uses reusable or composable UI components for developing the view.
+
 ## Main difference bt framework and library
 
 A framework is used for building and deploying an application quickly. When we use a framework, we can use resources to facilitate faster development and a greater user experience. A library is used to enhance the functionality of an application.
@@ -33,6 +43,9 @@ package-lock.json file is like a one-stop solution of your entire problem. packa
 The purpose of package-lock.json is to ensure that the same dependencies are installed consistently across different environments, such as development and production environments. It also helps to prevent issues with installing different package versions, which can lead to conflicts and errors.
 
 package-lock.json is created by npm when you run the npm install command. It contains a detailed list of all the packages, their dependencies, their specific version numbers, and locations (usually mentioned in the package.json file)
+
+<img width="733" alt="Screenshot 2023-05-29 at 11 25 34 PM" src="https://github.com/nitishpratap18/interviews/assets/134757846/df6d0cef-bcb2-4446-9a29-95782804f609">
+
 
 ## what is node module
 
