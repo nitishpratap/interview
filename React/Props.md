@@ -5,59 +5,26 @@ Props in React are inputs that you pass into components. The props enable the co
 
 ## Example
 ```javascript
-function Avatar() {
+const myElement = <Car brand="Ford" />;
+```
+```jsx
+function Car(props) {
+  return <h2>I am a { props.brand }!</h2>;
+}
+
+function Garage() {
   return (
-    <img
-      className="avatar"
-      src="https://i.imgur.com/1bX5QH6.jpg"
-      alt="Lin Lanying"
-      width={100}
-      height={100}
-    />
+    <>
+      <h1>Who lives in my garage?</h1>
+      <Car brand="Ford" />
+    </>
   );
 }
 
-export default function Profile() {
-  return (
-    <Avatar />
-  );
-}
-
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Garage />);
 ```
 
-## Structure of parent component
-```javascript
-import Product from "./Product"
-
-function App() {
-  return (
-      <div>
-      	<h1>PRODUCTS</h1>
-      	<div className="App">
-      		<Product />
-      	</div>
-      </div>
-  )
-}
-
-export default App
-```
-
-## Structure of child component
-```javascript
-function Product() {
-    return (
-        <div>
-            <img src="https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/82/6142201/1.jpg?2933" alt="sneakers" />
-            <h4>Cyxus</h4>
-            <p>Non-Slip Fitness Leisure Running Sneakers</p>
-            <h4>$29</h4>
-        </div>
-    );
-}
-
-export default Product
-```
 
 ## How to Use React Props
 Before we go deeper, it is important to note that React uses a one-way data flow. This means that data can only be transferred from the parent component to the child components. Also, all the data passed from the parent can't be changed by the child component.
