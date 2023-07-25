@@ -131,5 +131,3 @@ The `useContext` hook allows us to avoid prop-drilling, where the data would hav
 ## Note
 
 Context in React is powerful but should be used judiciously to avoid overusing global state and making the component tree harder to understand. For more complex state management needs, you may consider using libraries like Redux.
-
-React's implementation and features may evolve over time. For the latest and most accurate information on `useContext` and other hooks, refer to the official React documentation.

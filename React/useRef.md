@@ -74,5 +74,3 @@ In this example, we use `useRef` to create the `prevCountRef` ref and initialize
 - `useRef` returns an object with a property called `current`. You can access and modify the value of the ref using `refContainer.current`.
 - The value of `refContainer.current` will persist across renders, but updating it will not trigger a re-render.
 - Be cautious when using `useRef` to modify the DOM directly. In most cases, it's recommended to use React's declarative approach and manage the DOM through state and props.
-
-Keep in mind that React's implementation and features might evolve over time. For the latest and most accurate information on `useRef` and other hooks, refer to the official React documentation.

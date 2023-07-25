@@ -49,6 +49,3 @@ It's essential to use `useCallback` when passing down functions as props to chil
 
 Remember that memoization comes with some performance trade-offs. Using `useCallback` can be beneficial when dealing with functions that are computationally expensive or when passing functions down multiple levels in the component tree.
 
-## Note
-
-React's implementation and features may evolve over time. For the latest and most accurate information on `useCallback` and other hooks, refer to the official React documentation.

@@ -72,7 +72,3 @@ In this example, we define a simple `reducer` function that increments and decre
 
 However, for simple and straightforward state management, the `useState` hook might be sufficient and more straightforward.
 
-## Note
-
-React's implementation and features may evolve over time. For the latest and most accurate information on `useReducer` and other hooks, refer to the official React documentation.
-U

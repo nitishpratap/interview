@@ -64,4 +64,3 @@ When the user inputs a new number in the input field, the `number` state is upda
 - Only use `useMemo` when necessary, as memoization comes with some trade-offs and may not always provide a significant performance boost for simple computations or small datasets.
 - React will recompute the memoized value whenever any of the dependencies change. Ensure that the dependencies are stable and do not change frequently during the component's lifecycle.
 
-React's implementation and features may evolve over time. For the latest and most accurate information on `useMemo` and other hooks, refer to the official React documentation.
