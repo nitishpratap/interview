@@ -65,4 +65,4 @@ Instead, React batches multiple updates together and performs the minimum necess
 
 **3. Virtual DOM**: As mentioned earlier, React uses the Virtual DOM, an in-memory representation of the actual DOM, to perform efficient updates. The Virtual DOM allows React to work with a lightweight version of the DOM and avoid direct manipulation of the real DOM until it has a complete set of changes to apply.
 
-By batching updates and using the Virtual DOM, React minimizes the number of actual DOM manipulations required, leading to better performance and a smoother user experience. Additionally, this approach ensures that the actual DOM is updated in a controlled and optimized manner, preventing redundant updates and unnecessary reflows.
+By batching updates and using the Virtual DOM, React minimizes the number of actual DOM manipulations required, leading to better performance and a smoother user experience. Additionally, this approach ensures that the actual DOM is updated in a controlled and optimized manner, preventing redundant updates and unnecessary re-flows.
