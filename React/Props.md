@@ -35,7 +35,7 @@ Before we go deeper, it is important to note that React uses a one-way data flow
 Props are objects. So to destructure objects in React, the first step is to group your properties within a set of curly braces. Then you can either store it into a variable called props within the body of the function or pass it directly as the function’s parameter.
 
 ```javascript
-unction Product = (props) => {
+function Product = (props) => {
 //First Step: Destructuring within the body of the function
     const { img, name, desc, price} = props ;
     return (
