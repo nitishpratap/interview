@@ -14,58 +14,6 @@ The HTTP or web server processes HTTP requests, which is a network protocol used
 ## Creating a Basic HTTP Server
 Now let’s start by building a server that returns plain text to the user. This will cover the fundamental concepts required to build up a server, which will lay the groundwork for returning more complicated data types.
 
-You need to have Node.js installed in your system. You can easily install Node.js with the help of the installer provided on the official Node.js website.
-
-Next, create a directory for this project and name it node-http-server. You can use the following command for this task:
-```javascript
-mkdir node-http-server
-```
-
-Then switch to that folder :
-
-```cd node-http-server```
-
-Now create a file server.js in which you will be writing the code.
-
-
-In the file write the code as we discuss below.
-
-First load the http module which is a core Node.js module and hence doesn't require installation. Add the following line to server.js :
-
-```javascript
-const http = require("http");
-```
-
-The http module has the required functions for creating the server. Now create two constants two stores of the value of the hostname and the port:
-
-```javascript
-const host = 'localhost';
-const port = 8000;
-
-```
-Web servers, as previously stated, accept requests from browsers and other clients. We can communicate with a web server by entering a domain name, which a DNS server converts to an IP address. An IP address is a unique sequence of characters that identifies a computer on a network such as the internet.
-
-The localhost is a private address used by computers to refer to themselves. It is equivalent to the internal IP address 127.0.0.1 and is only accessible to the local computer and not to any local networks connected or to the internet.
-
-The port is a number that servers use to connect to a specific process on our IP address as an endpoint or door. In this example, we will run our web server on port 8000. Ports 8080 and 8000 are commonly used as default ports in development, and most developers will use them for HTTP servers rather than other ports. The server is bound to the host and port, and hence you will be able to access it on http://localhost:8000.
-
-Create a function requestListener to handle the incoming requests. This function requires two parameters: a request object and a response object. The request object stores all of the data from the incoming HTTP request. The response object is responsible for returning HTTP responses to the server, and it contains all the details about the response.
-
-```javascript
-const requestListener = function (req, res) {
-res.writeHead(200)
-res.end('Welcome user!!')
-}
-```
-
-The function will return Welcome user!! as a response to the client.
-
-In Node.js, all request listener functions take two arguments: req and res . The user's HTTP request is stored in the Request object (req) which is the first argument. We generate the HTTP response that we return to the user by modifying the Response object (res) in the second argument.
-
-The first line of code, res.writeHead(200), specifies the HTTP status code of the response. HTTP status codes represent how well a server handled an HTTP request. The status code 200 corresponds to OK in this instance. The function's next line, res.end("Welcome user!!"), returns the HTTP response to the client who requested it. This function returns any data to be sent from the server. It is returning text data in this case.
-
-Now add the following code in the file to create the server :
-
 ```javascript
 const server = http.createServer(requestListener)
 server.listen(port, host, () => {
@@ -119,21 +67,6 @@ JavaScript Object Notation, or JSON for short, is a text-based data transmission
 
 APIs frequently utilize JSON to accept and return data. Its popularity comes from its smaller data transfer size over previous data interchange formats, such as XML, as well as the availability of technology that allows applications to parse it with minimal effort.
 
-Now to serve JSON, make the following changes to the requestListener:
-
-```javascript
-const requestListener = function (req, res) {
-res.setHeader('Content-Type', 'application/json')
-res.writeHead(200)
-res.end(`{"message": "greeting", "value": "Hello user!!"}`)
-}
-```
-
-The method res.setHeader() inserts an HTTP header to the response. HTTP headers are used to include additional information to request or respond. The res.setHeader() requires two parameters: the name and value of the header.
-
-The Content-Type header is used to specify the data format or the media type, that is transmitted with the request or response. Our Content-Type in this example is application/json.
-
-Now your code will become :
 
 ```javascript
 const http = require('http')
@@ -165,20 +98,6 @@ In the case of a CSV file, the browser downloads the file automatically.
 
 Make the following changes to the requestListener:
 
-```javascript
-const requestListener = function (req, res) {
-res.setHeader('Content-Type', 'text/csv')
-res.setHeader('Content-Disposition', 'attachment;filename=users.csv')
-res.writeHead(200)
-res.end(`id,name,email\n1,John Doe,john@gmail.com`)
-}
-```
-
-The Content-Type shows that a CSV file is being sent this time, as the value is text/csv. Content-Disposition is the second header that is added. This header instructs the browser on how to display the data, whether in the browser or a separate file.
-
-Even if the Content-Disposition header is not set most browsers download the file in the case of CSV. The header should be included as it allows us to set the name of the file that will be downloaded at the user's end. In this case, the name will be users.csv.
-
-Now your complete code must be like this :
 
 Example :
 
@@ -205,24 +124,15 @@ On running the code your browser will download the file users.csv if you visit t
 
 The file will have the following contents when opened using a text editor :
 
+```javascript
 id, name,email
 1, John Doe,john@gmail.com
-Serving HTML
-When we want users to communicate with our server via a web browser, we typically utilize HTML or HyperText Markup Language. Web browsers are designed to show HTML text as well as any CSS styles we add to our websites. CSS is another front-end web technology that allows us to modify the look of our websites.
 
-Make the following changes to the requestListener:
-
-```javascript
-const requestListener = function (req, res) {
-res.setHeader('Content-Type', 'text/html')
-res.writeHead(200)
-res.end(`<html><body><p>This is an HTML page.</p></body></html>`)
-}
 ```
 
-First, we include the HTTP status code. Then, using a string argument containing valid HTML, we call the response.end() function. When we use the browser to connect to our server, we will see an HTML page with one paragraph tag that says This is an HTML page.
+## Serving HTML
 
-Now your complete code must be like this :
+When we want users to communicate with our server via a web browser, we typically utilize HTML or HyperText Markup Language. Web browsers are designed to show HTML text as well as any CSS styles we add to our websites. CSS is another front-end web technology that allows us to modify the look of our websites.
 
 Example :
 ```javascript
@@ -263,19 +173,6 @@ Consider the case of a sample HTML page hello.html that needs to be displayed.
 </html>
 ```
 
-We must now read the file before we can import it, which is accomplished with the help of the fs module.
-
-```javascript
-const http = require('http')
-const fs = require('fs')
-```
-
-A function called readFile() is available in the fs module and is typically used to load HTML files. We import the promised variation of the call to stay current with contemporary JavaScript conventions. Additionally, in many situations, it is superior to callbacks.
-
-After updating the running js file with this information, we must return the page using it.
-
-Example :
-
 ```javascript
 const requestListener = function (req, res) {
 fs.readFile(__dirname + '/hello.html')
@@ -292,11 +189,7 @@ return
 }
 ```
 
-Here, the file is loaded using the fs.readFile() method. __dirname and /samplePage.html are its two inputs. The absolute path, where Node.js code is now being executed, is represented here by the variable __dirname. To load the HTML file we want to serve, we can then add /samplePage.html to this route.
-
-The data will be returned once the fs.readFile() promise has been successfully resolved. Then, to handle this follow-up situation, we use the then() method. The HTML file's real data is located in the contents parameter.
-
-Handle Routes by HTTP Request Object
+## Handle Routes by HTTP Request Object
 The majority of websites and APIs that we visit or use typically have many url endpoints so that we can access the various resources that are offered on the same platform. An inventory management scenario, such as one that might be employed in a warehouse, is a typical example.
 
 To handle requests whose URL contains other destinations, we have not yet implemented any extra routing logic inside the requestListener() function.
@@ -478,15 +371,6 @@ console.log("Server listening on PORT :", PORT);
 });
 
 ```
-In the above code snippet, first, the http module has been imported. The PORT is set as 8000.
-
-Then the createServer() method is used to create a server. The incoming request’s URL is checked. If the URL is / then an HTML file is served to contain a form. In the form, the user can enter his name and submit it. Submitting the form creates a POST request to the /name endpoint. .on() listeners for data are used to get the body chunks. .on() for the end event concatenates all the chunks and forms a string. The string is broken and the name of the user is stored in the username variable. For any other endpoint HTML with a hello is sent.
-
-Now, as you have seen how to create an HTTP server and how to parse the body of an HTTP request, let us now create a simple application using an HTTP server. We will create a simple application in which one can create simple posts.
-
-The first step is to create an HTTP server. So create a file server.js. Create the server by calling the createServer() function on the HTTP module after requiring it. The server object that these function returns allows us to select the port on which the server should listen for requests using a method called listen.
-
-The requestListener() function that manages requests and responses is the only argument required by the createServer function. With the help of this callback function, we can use the asynchronous event-driven architecture in Node to process requests as they come in and continue running other code while we wait for a request without blocking.
 
 ```javascript
 const http = require("http");
@@ -504,81 +388,6 @@ console.log(`App running on port ${port}`);
 });
 
 ```
-With the code shown above, an HTTP server will be created that will be listening on port 8000 and will have a response defined for all incoming requests. The request URL value is stored in the req object's url property, therefore a request made to http://localhost:8000 would have the value / in it. An HTTP status code and headers for a response are defined by the writeHead method on the response object. We then include some HTML in the response before concluding it with res.end().
-
-We have created a simple server till now. Now we need to create an html file that we will send as a response. The HTML file will contain the form through which users will provide the data for the post. So create a file index.html and write the following code in it.
-
-```javascript
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Node.js Application</title>
-  </head>
-  <body>
-    <h1>Create A Post</h1>
-    <form
-      action="/post"
-      method="POST"
-      style="display: flex; flex-direction: column; max-width: 30ch"
-    >
-      <label for="name">Name</label>
-      <input
-        type="text"
-        name="name"
-        id="name"
-        placeholder="Enter name..."
-      /><br />
-      <label for="postData">Post Data</label>
-      <textarea
-        name="postData"
-        id="postData"
-        rows="40"
-        cols="10"
-        style="resize: vertical; height: 8rem"
-        placeholder="Enter post Data..."
-      ></textarea
-      ><br />
-      <button type="submit">Submit</button>
-    </form>
-  </body>
-</html>
-
-```
-The HTML file contains a form with two fields: a name and a postData field. Now we need to modify the server.js file to serve the index.html file. So now make the changes in the server.js file as in the following code :
-
-```javascript
-const http = require("http");
-const fs = require("fs");
-
-const port = process.env.PORT || 8000;
-
-const server = http.createServer(function (req, res) {
-console.log(`Request received for '${req.url}'`);
-fs.readFile(__dirname + "/index.html", function (err, data) {
-if (err) {
-res.writeHead(404);
-res.end(JSON.stringify(err));
-return;
-}
-res.writeHead(200, { "Content-Type": "text/html" });
-res.end(data);
-});
-});
-
-server.listen(port, () => {
-console.log(`App running on port ${port}`);
-});
-```
-
-The above code will serve the currently selected directory's index.html file. The __dirname is an environment variable that gives the absolute path of the currently executing file.
-
-In the above example res.end() is used to send the response data. Alternatively, you could use the same result by first using res.send(data) or res.write(data), then res.end(). The .send() method, which has the syntax .send([body]), sends the HTTP response, and the body parameter accepts one of the following values: a Buffer object, a String, an object, or an array. The response process will be ended by the .end() method.
-
-The HTML page shown above will be returned as the response when you send a request to the / route on the HTTP server we built. Every path accessed on the server will return the same result because we haven't set up any routing.
-
-The application we are creating will have two endpoints only: one / for serving the form page and one /post for POST requests where form data will be handled. So now create a file handlers.js where we will be keeping the logic for both endpoints. Write the following code in the handlers.js file.
 
 Example:
 
@@ -625,13 +434,6 @@ post,
 };
 ```
 
-In the above code snippet, we have two functions one having the logic for the home page and one having the logic for the post endpoint. The home method uses the same implementation as in displaying the response to read a file's contents and serve them. The post function is an endpoint that shows the form submission from the home page on /post after receiving a POST request from the form submission. The action attribute of the form element equals /post, which indicates that when the form is submitted then the page gets forwarded to http://localhost:8000/post.
-
-In the post method the .on() listener for the data event is used to form a string of request body. This string is similar to the query string of a URL. The query string used to represent the form data is delivered to the server as the post body when a form is submitted.
-
-We can utilize URLSearchParams now that the URLSearchParams interface is available. To extract the values from the query string, the .get() is used. In the end, an object with the name and data is sent as a response.
-
-Now you need to make changes in the server.js file to introduce the routing of requests to the correct handler. The primary responsibility of the router is to "route" requests to a specified handler, who subsequently sends a response. So make the changes in the server.js file as n the below code :
 
 ```javascript
 const http = require("http");
@@ -664,26 +466,6 @@ console.log(`App running on port ${port}`);
 });
 
 ```
-In the above code, the two handlers have been imported. A requestListener function is created. All the code related to routing is written in the requestListener function. A switch statement has been used. For the / path the home() function has been called. Similarly for /post, the post() function has been called. For all the other cases a message has been returned.
-
-The requestListener function is passed in the createServer() function. Now the App is functional. Use the below command to run the server :
-
-$ node server
-
-You will get the following output in the terminal :
-
-App running on port 8000
-
-Now open http://localhost:8000/ in any browser. You must see the following screen:
-
-output requestlistener function
-
-Enter some data and press submit. Now the url will change to http://localhost:8000/post and you will see the following output :
-
-output after entering data
-
-Also in the terminal, the following logs will appear :
-
 ```javascript
 Request received for '/'
 Executing 'home' handler
@@ -692,4 +474,3 @@ Executing 'post' handler
 Data: { name: 'John Doe', postData: 'Sample Data' }
 ```
 
-Hence, our application is functional and the use of an HTTP server is being made.
